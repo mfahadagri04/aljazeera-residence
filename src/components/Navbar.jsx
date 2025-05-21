@@ -12,7 +12,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="nav_bg py-1 px-3 md:px-[3rem] relative backdrop-blur-sm">
+        <nav className="nav_bg py-1 px-3 md:px-[5rem] relative backdrop-blur-sm">
             <div className="flex justify-between items-center">
                 {/* Compact Logo */}
                 <a href="#" className="flex items-center z-50 -my-2">
@@ -25,7 +25,7 @@ const Navbar = () => {
 
                 {/* Tight Desktop Navigation */}
                 <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
-                    <ul className="flex gap-4 text-primary cursor-pointer">
+                    <ul className="flex gap-8 text-primary cursor-pointer">
                         {navList.map(({ link }) => (
                             <li key={link} className="hover:text-secondary transition-colors">
                                 <a className="font-medium text-lg">{link}</a>

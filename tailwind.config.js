@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FFFFFF",   // White
+        primary: "#F5F0E6",   // White
         secondary: "#D19705", // Gold
-        tertiary: "#000000",  // Black
+        tertiary: "#1A365D",  // Black
       }
     },
   },
