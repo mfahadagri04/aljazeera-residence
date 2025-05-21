@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .home_section {
-  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)),url(./assets/react.svg);
+  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)),url(./assets/AJRHomepage.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;

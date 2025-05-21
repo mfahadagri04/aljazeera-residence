@@ -2,14 +2,14 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}", // Matches all JS/JSX files in src/
+    "./src/**/*.{js,jsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#FEECE2",
-        secondary: "#FFBE98",
-        tertiary: "#E2BFB3", 
+        primary: "#FFFFFF",   // White
+        secondary: "#C5A880", // Muted Metallic Gold
+        tertiary: "#000000",  // Black
       }
     },
   },
