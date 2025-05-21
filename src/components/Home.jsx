@@ -35,10 +35,10 @@ const Home = () => {
             <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-o right-[25rem]">
                 <div classNAme="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
                     <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
-                        Luxury Suites
+                        Serene Spa Treatment
                     </h3>
                     <p className="text-secondary text-lg font-medium mt-5">
-                        Elegant suites with breathtaking views and lavish amenities await
+                        Rejuvenate your senses with out blissful spa treatments
                     </p>
                 </div>
             </div>
@@ -47,10 +47,10 @@ const Home = () => {
             <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-o right-[5rem]">
                 <div classNAme="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
                     <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
-                        Luxury Suites
+                        Fine Dining Experience
                     </h3>
                     <p className="text-secondary text-lg font-medium mt-5">
-                        Elegant suites with breathtaking views and lavish amenities await
+                        Savor exquisite flavors curated by our world-class chefs
                     </p>
                 </div>
             </div>
