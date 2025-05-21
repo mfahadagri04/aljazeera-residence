@@ -20,39 +20,39 @@ const Home = () => {
             </div>
 
             {/* Card 1 */}
-            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-o right-[45rem]">
-                <div classNAme="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
-                    <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
-                        Luxury Suites
-                    </h3>
-                    <p className="text-secondary text-lg font-medium mt-5">
-                        Elegant suites with breathtaking views and lavish amenities await
-                    </p>
-                </div>
+            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-0 right-[45rem]">
+            <div className="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
+                <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
+                Luxury Suites
+                </h3>
+                <p className="text-secondary text-lg font-medium mt-5">
+                Elegant suites with breathtaking views and lavish amenities await
+                </p>
+            </div>
             </div>
 
             {/* Card 2 */}
-            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-o right-[25rem]">
-                <div classNAme="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
-                    <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
-                        Serene Spa Treatment
-                    </h3>
-                    <p className="text-secondary text-lg font-medium mt-5">
-                        Rejuvenate your senses with out blissful spa treatments
-                    </p>
-                </div>
+            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-0 right-[25rem]">
+            <div className="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
+                <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
+                Serene Spa Treatment
+                </h3>
+                <p className="text-secondary text-lg font-medium mt-5">
+                Rejuvenate your senses with out blissful spa treatments
+                </p>
             </div>
-            
+            </div>
+
             {/* Card 3 */}
-            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-o right-[5rem]">
-                <div classNAme="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
-                    <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
-                        Fine Dining Experience
-                    </h3>
-                    <p className="text-secondary text-lg font-medium mt-5">
-                        Savor exquisite flavors curated by our world-class chefs
-                    </p>
-                </div>
+            <div className="lg:flex hidden flex-col justify-end items-center absolute bottom-0 right-[5rem]">
+            <div className="border-2 border-secondary bg-primary p-6 w-[300px] h-[200px] rounded-t-3xl hover:scale-110 duration-700">
+                <h3 className="border-b-2 border-b-tertiary text-secondary text-xl font-bold">
+                Fine Dining Experience
+                </h3>
+                <p className="text-secondary text-lg font-medium mt-5">
+                Savor exquisite flavors curated by our world-class chefs
+                </p>
+            </div>
             </div>
         </section>
     );
