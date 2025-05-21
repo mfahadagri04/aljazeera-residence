@@ -3,11 +3,11 @@ import Navbar from './Navbar'
 
 const Home = () => {
     return (
-        <section className="home_section min-h-screen">
+        <section className="home_section">
             <Navbar />
             
             {/* Centered Content Container */}
-            <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] text-center px-4">
+           <div className="flex flex-col items-center justify-center h-[calc(100vh-104px)] text-center px-4">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl text-secondary font-semibold mb-6">
                     Peu Haba!
                 </h2>

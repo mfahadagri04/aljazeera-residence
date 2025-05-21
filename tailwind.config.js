@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "#F5F0E6",   // White
-        secondary: "#D19705", // Gold
+        secondary: "#E5890D", // Gold
         tertiary: "#1A365D",  // Black
       }
     },

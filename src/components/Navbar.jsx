@@ -19,7 +19,7 @@ const Navbar = () => {
                     <img 
                         src={logo}
                         alt="Al Jazeera Residence Logo"
-                        className="h-24 w-48 object-contain" // Reduced from h-32/w-64
+                        className="h-24 w-48 object-contain"
                     />
                 </a>
 
