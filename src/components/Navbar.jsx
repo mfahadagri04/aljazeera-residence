@@ -1,63 +1,66 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from '../assets/AJZ-logo.png';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
 
     const navList = [
-        { link: "Home" },
-        { link: "Our Houses" },
+        { link: "Our Suites" },
         { link: "Contact" },
         { link: "Testimonial" }
     ];
 
     return (
-        <nav className="nav_bg p-4 px-6 md:px-[5rem] relative">
+        <nav className="nav_bg py-1 px-3 md:px-[3rem] relative backdrop-blur-sm">
             <div className="flex justify-between items-center">
-                <div className="text-md flex space-x-16 items-center">
-                    {/* Logo */}
-                    <a href="#" className="text-3xl font-bold text-secondary">
-                        Al-Jazeera Residence
-                    </a>
+                {/* Compact Logo */}
+                <a href="#" className="flex items-center z-50 -my-2">
+                    <img 
+                        src={logo}
+                        alt="Al Jazeera Residence Logo"
+                        className="h-24 w-48 object-contain" // Reduced from h-32/w-64
+                    />
+                </a>
 
-                    {/* Desktop Nav List */}
-                    <ul className="lg:flex space-x-8 hidden text-primary cursor-pointer">
+                {/* Tight Desktop Navigation */}
+                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+                    <ul className="flex gap-4 text-primary cursor-pointer">
                         {navList.map(({ link }) => (
-                            <a key={link} className="font-medium hover:text-secondary">
-                                {link}
-                            </a>
+                            <li key={link} className="hover:text-secondary transition-colors">
+                                <a className="font-medium text-lg">{link}</a>
+                            </li>
                         ))}
                     </ul>
                 </div>
 
-                <button className="border-2 border-secondary text-white font-semibold px-6 py-3 rounded-full 
-                hidden lg:flex hover:bg-secondary duration-300">
+                {/* Compact Book Now Button */}
+                <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full 
+                hidden lg:flex hover:bg-secondary duration-300 text-base">
                     Book Now
                 </button>
 
-                {/* Mobile Menu */}
+                {/* Mobile Menu Adjustments */}
                 <div className="lg:hidden flex flex-1 justify-end items-center">
                     <button 
                         onClick={() => setToggle((prev) => !prev)} 
                         className="text-primary z-50"
                     >
                         {toggle ? (
-                            <FaTimes className="w-6 h-6" />
+                            <FaTimes className="w-5 h-5" />
                         ) : (
-                            <FaBars className="w-6 h-6" />
+                            <FaBars className="w-5 h-5" />
                         )}
                     </button>
                     
-                    {/* Mobile Menu Dropdown */}
                     <div className={`${toggle ? "flex" : "hidden"} 
-                        p-6 bg-primary absolute top-20 right-4 mx-4 my-2 
-                        rounded-lg min-w-[200px] z-40 shadow-xl`}
-                    >
-                        <ul className="flex flex-col space-y-4 w-full">
+                        p-2 bg-primary absolute top-12 right-3 mx-2 
+                        rounded-md min-w-[140px] z-40 shadow-xl`}>
+                        <ul className="flex flex-col gap-1.5 w-full">
                             {navList.map(({ link }) => (
                                 <a 
                                     key={link} 
-                                    className="font-medium hover:text-secondary p-2"
+                                    className="font-medium hover:text-secondary p-1.5 text-sm"
                                     onClick={() => setToggle(false)}
                                 >
                                     {link}
