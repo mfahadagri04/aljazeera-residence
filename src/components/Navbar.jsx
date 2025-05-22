@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className="sticky top-0 z-50 nav_bg py-1 px-3 md:px-[5rem] backdrop-blur-sm">
             <div className="flex justify-between items-center w-full relative">
                 {/* Logo */}
-                <a href="Home" className="z-50 -my-1">
+                <a href="#" className="z-50 -my-1">
                     <img 
                         src={logo}
                         alt="Al Jazeera Residence Logo"
