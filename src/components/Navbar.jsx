@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from '../assets/AJZ-logo.png';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -8,15 +9,15 @@ const Navbar = () => {
     const navList = [
         { link: "Home" },
         { link: "Our Suites" },
-        { link: "Contact" },
-        { link: "Testimonial" }
+        { link: "Testimonial" },
+        { link: "Contacts" }
     ];
 
     return (
         <nav className="nav_bg py-1 px-3 md:px-[5rem] relative backdrop-blur-sm">
             <div className="flex justify-between items-center w-full relative">
-                {/* Logo - Far Left */}
-                <a href="#" className="z-50 -my-2">
+                {/* Logo */}
+                <a href="Home" className="z-50 -my-2">
                     <img 
                         src={logo}
                         alt="Al Jazeera Residence Logo"
@@ -24,18 +25,26 @@ const Navbar = () => {
                     />
                 </a>
 
-                {/* Nav Links - Center */}
+                {/* Nav Links */}
                 <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
                     <ul className="flex gap-8 text-primary cursor-pointer">
-                        {navList.map(({ link }) => (
-                            <li key={link} className="hover:text-secondary transition-colors">
-                                <a className="font-medium text-lg">{link}</a>
-                            </li>
-                        ))}
+                    {navList.map(({ link }) => (
+                        <li key={link} className="hover:text-secondary transition-colors">
+                        <ScrollLink
+                            to={link.replace(/\s+/g, '')}
+                            smooth={true}
+                            duration={500}
+                            offset={-80} // Adjust if your navbar is fixed
+                            className="font-medium text-lg cursor-pointer"
+                        >
+                            {link}
+                        </ScrollLink>
+                        </li>
+                    ))}
                     </ul>
                 </div>
 
-                {/* Book Now - Far Right */}
+                {/* Book Now */}
                 <div className="hidden lg:flex">
                     <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full 
                         hover:bg-secondary duration-300 text-base">
