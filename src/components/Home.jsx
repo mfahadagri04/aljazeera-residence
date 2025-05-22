@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 const Home = () => {
     return (
-        <section className="home_section">
+        <section id = "Home" className="home_section">
             <Navbar />
             
             {/* Centered Content Container */}
