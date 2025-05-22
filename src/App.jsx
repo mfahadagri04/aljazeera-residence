@@ -6,6 +6,7 @@ function App() {
   return (
     <section className='home_section'>
       <Home/>
+      <OurVillas/>
     </section>
   )
 }

@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const navList = [
         { link: "Home" },
-        { link: "Our Suites" },
+        { link: "Our Villas" },
         { link: "Testimonial" },
         { link: "Contacts" }
     ];
@@ -34,7 +34,7 @@ const Navbar = () => {
                             to={link.replace(/\s+/g, '')}
                             smooth={true}
                             duration={500}
-                            offset={-80} // Adjust if your navbar is fixed
+                            offset={-80}    
                             className="font-medium text-lg cursor-pointer"
                         >
                             {link}

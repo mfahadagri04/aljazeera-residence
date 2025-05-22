@@ -33,3 +33,7 @@
 .btn:hover {
   background: transparent;
 }
+
+.villas_section {
+  height: 100vh;
+}
