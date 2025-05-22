@@ -55,8 +55,8 @@ const villas = [
 
 const OurVillas = () => {
   return (
-    <section id="OurVillas" className="pt-12 px-4 md:px-16 bg-blue-50"> {/* Reduced from py-20 to pt-12 */}
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-8"> {/* Reduced mb-12 to mb-8 */}
+    <section id="OurVillas" className="pt-10 pb-10 px-4 md:px-16 bg-blue-50">
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
         Our Villas
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

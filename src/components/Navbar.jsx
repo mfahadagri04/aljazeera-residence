@@ -17,11 +17,11 @@ const Navbar = () => {
         <nav className="sticky top-0 z-50 nav_bg py-1 px-3 md:px-[5rem] backdrop-blur-sm">
             <div className="flex justify-between items-center w-full relative">
                 {/* Logo */}
-                <a href="Home" className="z-50 -my-2">
+                <a href="Home" className="z-50 -my-1">
                     <img 
                         src={logo}
                         alt="Al Jazeera Residence Logo"
-                        className="h-24 w-48 object-contain"
+                        className="h-16 w-32 object-contain"
                     />
                 </a>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
                             to={link.replace(/\s+/g, '')}
                             smooth={true}
                             duration={500}
-                            offset={-80}    
+                            offset={-65}    
                             className="font-medium text-lg cursor-pointer"
                         >
                             {link}
