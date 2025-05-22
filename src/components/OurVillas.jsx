@@ -55,38 +55,35 @@ const villas = [
 
 const OurVillas = () => {
   return (
-    <>
-      <Navbar />
-      <section id="OurVillas" className="py-20 px-4 md:px-16 bg-blue-50">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Our Villas
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {villas.map(({ name, type, img, description }) => (
-            <div
-              key={name}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={img}
-                  alt={name}
-                  className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-gray-800">{name}</h3>
-                <p className="text-sm text-gray-500 mb-2">{type}</p>
-                <p className="text-sm text-gray-600">{description}</p>
-                <button className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors">
-                  View Details
-                </button>
-              </div>
+    <section id="OurVillas" className="pt-12 px-4 md:px-16 bg-blue-50"> {/* Reduced from py-20 to pt-12 */}
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-8"> {/* Reduced mb-12 to mb-8 */}
+        Our Villas
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {villas.map(({ name, type, img, description }) => (
+          <div
+            key={name}
+            className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={img}
+                alt={name}
+                className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-gray-800">{name}</h3>
+              <p className="text-sm text-gray-500 mb-2">{type}</p>
+              <p className="text-sm text-gray-600">{description}</p>
+              <button className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors">
+                View Details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

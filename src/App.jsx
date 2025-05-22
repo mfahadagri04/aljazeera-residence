@@ -1,15 +1,16 @@
-import './App.css'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import OurVillas from './components/OurVillas' 
+import './App.css';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import OurVillas from './components/OurVillas';
 
 function App() {
   return (
-    <section className='home_section'>
-      <Home/>
-      <OurVillas/>
-    </section>
-  )
+    <div className="home_section">
+      <Navbar />
+      <Home />
+      <OurVillas />
+    </div>
+  );
 }
 
-export default App
+export default App;

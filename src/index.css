@@ -3,11 +3,27 @@
 @tailwind utilities;
 
 .home_section {
-  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)),url(./assets/AJRHomepage.jpg);
-  height: 100vh;
+  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)), url(./assets/AJRHomepage.jpg);
+  min-height: 100vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Navbar-specific sticky positioning */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  overflow: hidden; 
+}
+
+/* Ensure content flows correctly */
+.app-root {
+  position: relative;
 }
 
 .nav_bg {
@@ -35,5 +51,5 @@
 }
 
 .villas_section {
-  height: 100vh;
+  height: 95vh;
 }

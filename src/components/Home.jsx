@@ -4,8 +4,6 @@ import Navbar from './Navbar'
 const Home = () => {
     return (
         <section id = "Home" className="home_section">
-            <Navbar />
-            
             {/* Centered Content Container */}
            <div className="flex flex-col items-center justify-center h-[calc(100vh-104px)] text-center px-4">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl text-secondary font-semibold mb-6">
