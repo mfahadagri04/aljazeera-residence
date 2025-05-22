@@ -71,13 +71,18 @@ const Navbar = () => {
                         rounded-md min-w-[140px] z-40 shadow-xl`}>
                         <ul className="flex flex-col gap-1.5 w-full">
                             {navList.map(({ link }) => (
-                                <a 
-                                    key={link} 
-                                    className="font-medium hover:text-secondary p-1.5 text-sm"
-                                    onClick={() => setToggle(false)}
-                                >
-                                    {link}
-                                </a>
+                                <li key={link}>
+                                    <ScrollLink
+                                        to={link.replace(/\s+/g, '')}
+                                        smooth={true}
+                                        duration={500}
+                                        offset={-65}
+                                        className="font-medium hover:text-secondary p-1.5 text-sm cursor-pointer"
+                                        onClick={() => setToggle(false)}
+                                    >
+                                        {link}
+                                    </ScrollLink>
+                                </li>
                             ))}
                         </ul>
                     </div>
