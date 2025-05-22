@@ -6,6 +6,7 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
 
     const navList = [
+        { link: "Home" },
         { link: "Our Suites" },
         { link: "Contact" },
         { link: "Testimonial" }
@@ -13,9 +14,9 @@ const Navbar = () => {
 
     return (
         <nav className="nav_bg py-1 px-3 md:px-[5rem] relative backdrop-blur-sm">
-            <div className="flex justify-between items-center">
-                {/* Compact Logo */}
-                <a href="#" className="flex items-center z-50 -my-2">
+            <div className="flex justify-between items-center w-full relative">
+                {/* Logo - Far Left */}
+                <a href="#" className="z-50 -my-2">
                     <img 
                         src={logo}
                         alt="Al Jazeera Residence Logo"
@@ -23,7 +24,7 @@ const Navbar = () => {
                     />
                 </a>
 
-                {/* Tight Desktop Navigation */}
+                {/* Nav Links - Center */}
                 <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
                     <ul className="flex gap-8 text-primary cursor-pointer">
                         {navList.map(({ link }) => (
@@ -34,14 +35,16 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/* Compact Book Now Button */}
-                <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full 
-                hidden lg:flex hover:bg-secondary duration-300 text-base">
-                    Book Now
-                </button>
+                {/* Book Now - Far Right */}
+                <div className="hidden lg:flex">
+                    <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full 
+                        hover:bg-secondary duration-300 text-base">
+                        Book Now
+                    </button>
+                </div>
 
-                {/* Mobile Menu Adjustments */}
-                <div className="lg:hidden flex flex-1 justify-end items-center">
+                {/* Hamburger (mobile) */}
+                <div className="lg:hidden flex justify-end items-center">
                     <button 
                         onClick={() => setToggle((prev) => !prev)} 
                         className="text-primary z-50"
@@ -52,7 +55,8 @@ const Navbar = () => {
                             <FaBars className="w-5 h-5" />
                         )}
                     </button>
-                    
+
+                    {/* Mobile Menu */}
                     <div className={`${toggle ? "flex" : "hidden"} 
                         p-2 bg-primary absolute top-12 right-3 mx-2 
                         rounded-md min-w-[140px] z-40 shadow-xl`}>
