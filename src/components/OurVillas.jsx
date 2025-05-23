@@ -44,7 +44,7 @@ const OurVillas = () => {
       description: "Enjoy a coastal escape with soft colors, minimalist décor, and a peaceful ambiance in Al-Ruwais."
     },
     {
-      name: "Al-Azizyah",
+      name: "Al-Aziziyah",
       type: "2-Bedroom Villa",
       img: alaziziyah, 
       description: "Located in the heart of the city, this stylish villa offers urban convenience and tranquil living."
@@ -60,7 +60,7 @@ const OurVillas = () => {
       {/* 3-Bedroom Villas */}
       <div className="mb-16">
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
-          3-Bedroom Villas
+          3-Bedroom Villas (Rp 800.000/night)
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {threeBedroomVillas.map((villa) => (
@@ -72,7 +72,7 @@ const OurVillas = () => {
       {/* 2-Bedroom Villas */}
       <div>
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
-          2-Bedroom Villas
+          2-Bedroom Villas (Rp 650.000/night)
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {twoBedroomVillas.map((villa) => (
@@ -100,7 +100,7 @@ const VillaCard = ({ name, type, img, description }) => (
       <p className="text-sm text-gray-500 mb-2">{type}</p>
       <p className="text-sm text-gray-600 mb-4 flex-grow">{description}</p>
       
-      <button className="mt-auto w-full bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors">
+      <button className="mt-auto w-full bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors">
         View Details
       </button>
     </div>
