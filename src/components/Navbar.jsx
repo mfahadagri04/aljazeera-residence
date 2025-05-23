@@ -93,7 +93,7 @@ const Navbar = () => {
                                         smooth={true}
                                         duration={500}
                                         offset={-65}
-                                        className="font-medium text-primary hover:text-secondary block p-1.5 text-sm"
+                                        className="font-medium text-black hover:text-secondary block p-1.5 text-sm"
                                         onClick={() => setToggle(false)}
                                     >
                                         {link}
