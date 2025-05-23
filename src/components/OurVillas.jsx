@@ -52,7 +52,7 @@ const OurVillas = () => {
   ];
 
   return (
-    <section id="OurVillas" className="py-20 px-4 md:px-16 bg-blue-50">
+    <section id="OurVillas" className="py-10 px-4 md:px-16 bg-blue-50">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
         Our Villas
       </h2>
