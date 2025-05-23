@@ -14,62 +14,78 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 nav_bg py-1 px-3 md:px-[5rem] backdrop-blur-sm">
-            <div className="flex justify-between items-center w-full relative">
-                {/* Logo */}
-                <a href="#" className="z-50 -my-1">
-                    <img 
-                        src={logo}
-                        alt="Al Jazeera Residence Logo"
-                        className="h-16 w-32 object-contain"
-                    />
-                </a>
-
-                {/* Nav Links */}
-                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
-                    <ul className="flex gap-8 text-primary cursor-pointer">
-                    {navList.map(({ link }) => (
-                        <li key={link} className="hover:text-secondary transition-colors">
-                        <ScrollLink
-                            to={link.replace(/\s+/g, '')}
-                            smooth={true}
-                            duration={500}
-                            offset={-65}    
-                            className="font-medium text-lg cursor-pointer"
+        <nav className="sticky top-0 z-50 nav_bg h-16 flex items-center backdrop-blur-sm">
+            <div className="w-full px-3 md:px-[5rem]">
+                {/* Mobile Layout (lg:hidden) */}
+                <div className="lg:hidden flex justify-between items-center h-16">
+                    {/* Empty div for spacing (flex-1 makes it take equal space) */}
+                    <div className="flex-1"></div>
+                    
+                    {/* Centered Logo */}
+                    <div className="flex-1 flex justify-center">
+                        <a href="#" className="z-50">
+                            <img 
+                                src={logo}
+                                alt="Al Jazeera Residence Logo"
+                                className="h-16 w-32 object-contain"
+                            />
+                        </a>
+                    </div>
+                    
+                    {/* Menu Icon (flex-1 + flex-end for alignment) */}
+                    <div className="flex-1 flex justify-end">
+                        <button 
+                            onClick={() => setToggle((prev) => !prev)} 
+                            className="text-primary z-50"
                         >
-                            {link}
-                        </ScrollLink>
-                        </li>
-                    ))}
-                    </ul>
+                            {toggle ? (
+                                <FaTimes className="w-5 h-5" />
+                            ) : (
+                                <FaBars className="w-5 h-5" />
+                            )}
+                        </button>
+                    </div>
                 </div>
 
-                {/* Book Now */}
-                <div className="hidden lg:flex">
-                    <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full 
-                        hover:bg-secondary duration-300 text-base">
+                {/* Desktop Layout (hidden lg:flex) */}
+                <div className="hidden lg:flex justify-between items-center h-16">
+                    {/* Desktop Logo */}
+                    <a href="#" className="z-50">
+                        <img 
+                            src={logo}
+                            alt="Al Jazeera Residence Logo"
+                            className="h-16 w-32 object-contain"
+                        />
+                    </a>
+
+                    {/* Desktop Nav Links */}
+                    <div className="flex gap-8 text-primary cursor-pointer">
+                        {navList.map(({ link }) => (
+                            <ScrollLink
+                                key={link}
+                                to={link.replace(/\s+/g, '')}
+                                smooth={true}
+                                duration={500}
+                                offset={-65}    
+                                className="font-medium text-lg hover:text-secondary transition-colors"
+                            >
+                                {link}
+                            </ScrollLink>
+                        ))}
+                    </div>
+
+                    {/* Desktop Book Now Button */}
+                    <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full hover:bg-secondary duration-300 text-base">
                         Book Now
                     </button>
                 </div>
+            </div>
 
-                {/* Hamburger (mobile) */}
-                <div className="lg:hidden flex justify-end items-center">
-                    <button 
-                        onClick={() => setToggle((prev) => !prev)} 
-                        className="text-primary z-50"
-                    >
-                        {toggle ? (
-                            <FaTimes className="w-5 h-5" />
-                        ) : (
-                            <FaBars className="w-5 h-5" />
-                        )}
-                    </button>
-
-                    {/* Mobile Menu */}
-                    <div className={`${toggle ? "flex" : "hidden"} 
-                        p-2 bg-primary absolute top-12 right-3 mx-2 
-                        rounded-md min-w-[140px] z-40 shadow-xl`}>
-                        <ul className="flex flex-col gap-1.5 w-full">
+            {/* Mobile Dropdown Menu */}
+            {toggle && (
+                <div className="lg:hidden fixed inset-0 z-40 mt-16 bg-black bg-opacity-50 backdrop-blur-sm">
+                    <div className="absolute right-3 top-2 bg-white p-4 rounded-md shadow-xl min-w-[140px]">
+                        <ul className="flex flex-col gap-3">
                             {navList.map(({ link }) => (
                                 <li key={link}>
                                     <ScrollLink
@@ -77,7 +93,7 @@ const Navbar = () => {
                                         smooth={true}
                                         duration={500}
                                         offset={-65}
-                                        className="font-medium hover:text-secondary p-1.5 text-sm cursor-pointer"
+                                        className="font-medium text-primary hover:text-secondary block p-1.5 text-sm"
                                         onClick={() => setToggle(false)}
                                     >
                                         {link}
@@ -87,7 +103,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
+            )}
         </nav>
     );
 };
