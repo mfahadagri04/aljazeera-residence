@@ -19,11 +19,6 @@ nav {
   padding: 1rem 0;
 }
 
-/* Ensure content flows correctly */
-.app-root {
-  position: relative;
-}
-
 .nav_bg {
   background: rgba(0,0,0,.18);
 }
@@ -46,8 +41,4 @@ nav {
 
 .btn:hover {
   background: transparent;
-}
-
-.villas_section {
-  height: 100vh;
 }
