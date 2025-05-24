@@ -23,6 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# Add these lines
-client/node_modules
+# Server
 server/node_modules
+server/.env
+server/*.log
+
+# General
+.DS_Store
+.env.local
