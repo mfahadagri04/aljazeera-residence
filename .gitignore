@@ -31,3 +31,5 @@ server/*.log
 # General
 .DS_Store
 .env.local
+
+render.yaml

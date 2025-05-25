@@ -1,11 +1,17 @@
+# render.yaml - For deploying backend to Render
 services:
   - type: web
-    name: aljazeera-server
+    name: aljazeera-backend
     runtime: node
     buildCommand: npm install
     startCommand: npm start
+    workingDirectory: /server  # Path to your server code
     envVars:
       - key: MONGODB_URI
-        value: your-mongodb-atlas-uri
+        value: mongodb+srv://fahadagri:fahadcalgary2022@aljazeera-testimonials.tanh2rt.mongodb.net/?retryWrites=true&w=majority&appName=AlJazeera-Testimonials
       - key: PORT
         value: 10000
+    nodeVersion: 22.15.1
+    regions: 
+      - oregon
+        
