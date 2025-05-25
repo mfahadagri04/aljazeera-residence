@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
     return (
@@ -7,7 +8,22 @@ const Home = () => {
             {/* Centered Content Container */}
            <div className="flex flex-col items-center justify-center h-[calc(100vh-104px)] text-center px-4">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl text-secondary font-semibold mb-6">
-                    Peu Haba!
+                <TypeAnimation
+                    sequence={[
+                    'Welcome!',
+                    1500,
+                    'Selamat Datang!',
+                    1500,
+                    '!مرحبا',
+                    1500, 
+                    ]}
+                    wrapper="span"
+                    speed={20}
+                    deletionSpeed={20}
+                    cursor={true}
+                    repeat={Infinity}
+                    style={{ display: 'inline-block' }}
+                />
                 </h2>
                 <p className="text-primary text-sm md:text-base lg:text-lg mb-8 max-w-2xl">
                     Al Jazeera Homestay in Banda Aceh offers a warm and welcoming atmosphere, combining traditional Acehnese hospitality with comfortable accommodations, making it an ideal stay for travelers seeking a peaceful and authentic local experience.

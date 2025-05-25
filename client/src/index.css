@@ -38,6 +38,15 @@ nav {
   line-height: 1;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: #D19705 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #D19705 !important;
+}
+
 
 .btn:hover {
   background: transparent;

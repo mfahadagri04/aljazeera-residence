@@ -1,13 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// localStorage.removeItem('testimonials');
 
 const Testimonial = () => {
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState(() => {
+    // Load from localStorage if available
+    const saved = localStorage.getItem('testimonials');
+    return saved ? JSON.parse(saved) : [];
+  });
+  
   const [formData, setFormData] = useState({
     name: '',
     testimonial: '',
     rating: 0
   });
+
+  // Save to localStorage whenever testimonials change
+  useEffect(() => {
+    localStorage.setItem('testimonials', JSON.stringify(testimonials));
+  }, [testimonials]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +34,11 @@ const Testimonial = () => {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
-      })
+      }),
+      id: Date.now()
     };
-    setTestimonials([newTestimonial, ...testimonials]);
+    
+    setTestimonials(prev => [newTestimonial, ...prev]);
     setFormData({ name: '', testimonial: '', rating: 0 });
   };
 
@@ -108,31 +127,44 @@ const Testimonial = () => {
           </form>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Carousel */}
         <h3 className="text-2xl font-semibold text-black mb-8 text-center"> 
           Recent Testimonials
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex gap-1 mb-3 text-secondary">
-                {renderStars(testimonial.rating)}
-              </div>
-              <h4 className="text-lg font-semibold text-primary mb-1">
-                {testimonial.name}
-              </h4>
-              <p className="text-xs text-primary/50 mb-2">
-                {testimonial.date}
-              </p>
-              <blockquote className="text-primary/70 italic text-sm">
-                "{testimonial.testimonial}"
-              </blockquote>
-            </div>
-          ))}
+        <div className="px-4 py-8 pb-10 min-h-[200px]"> 
+          <Swiper
+            key={testimonials.length}
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 4 }
+            }}
+            style={{ paddingBottom: "50px" }} 
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow h-full mx-2 min-h-[200px] flex flex-col">
+                  <div className="flex gap-1 mb-3 text-secondary">
+                    {renderStars(testimonial.rating)}
+                  </div>
+                  <h4 className="text-lg font-semibold text-black mb-1">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-xs text-black/50 mb-2">
+                    {testimonial.date}
+                  </p>
+                  <blockquote className="text-black/70 italic text-sm flex-grow">
+                    "{testimonial.testimonial}"
+                  </blockquote>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
