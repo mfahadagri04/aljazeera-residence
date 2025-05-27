@@ -49,34 +49,34 @@ const Navbar = () => {
 
                 {/* Desktop Layout (hidden lg:flex) */}
                 <div className="hidden lg:flex items-center justify-between h-16 relative">
-                {/* Left: Logo */}
-                <div className="flex-1">
-                    <a href="#" className="z-50">
-                    <img 
-                        src={logo}
-                        alt="Al Jazeera Residence Logo"
-                        className="h-16 w-32 object-contain"
-                    />
-                    </a>
-                </div>
-
-                {/* Center: Nav Links */}
-                <div className="absolute left-1/2 transform -translate-x-1/2">
-                    <div className="flex gap-8 text-primary cursor-pointer">
-                    {navList.map(({ link }) => (
-                        <ScrollLink
-                        key={link}
-                        to={link.replace(/\s+/g, '')}
-                        smooth={true}
-                        duration={500}
-                        offset={-65}    
-                        className="font-medium text-lg hover:text-secondary transition-colors"
-                        >
-                        {link}
-                        </ScrollLink>
-                    ))}
+                    {/* Left: Logo */}
+                    <div className="flex-1">
+                        <a href="#" className="z-50">
+                        <img 
+                            src={logo}
+                            alt="Al Jazeera Residence Logo"
+                            className="h-16 w-32 object-contain"
+                        />
+                        </a>
                     </div>
-                </div>
+
+                    {/* Center: Nav Links */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2">
+                        <div className="flex gap-8 text-primary cursor-pointer">
+                        {navList.map(({ link }) => (
+                            <ScrollLink
+                            key={link}
+                            to={link.replace(/\s+/g, '')}
+                            smooth={true}
+                            duration={500}
+                            offset={-65}    
+                            className="font-medium text-lg hover:text-secondary transition-colors"
+                            >
+                            {link}
+                            </ScrollLink>
+                        ))}
+                        </div>
+                    </div>
 
                     {/* Right: Placeholder for future button */}
                     {/* <div className="flex-1"></div> */}
