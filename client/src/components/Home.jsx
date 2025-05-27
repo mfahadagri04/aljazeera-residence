@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import TypeAnimation from 'react-type-animation';
+import {TypeAnimation} from 'react-type-animation';
 
 const Home = () => {
     return (
