@@ -13,14 +13,13 @@ const Testimonial = () => {
     const saved = localStorage.getItem('testimonials');
     return saved ? JSON.parse(saved) : [];
   });
-  
+
   const [formData, setFormData] = useState({
     name: '',
     testimonial: '',
-    rating: 0
+    rating: 0,
   });
 
-  // Save to localStorage whenever testimonials change
   useEffect(() => {
     localStorage.setItem('testimonials', JSON.stringify(testimonials));
   }, [testimonials]);
@@ -32,12 +31,11 @@ const Testimonial = () => {
       date: new Date().toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'long',
-        year: 'numeric'
+        year: 'numeric',
       }),
-      id: Date.now()
+      id: Date.now(),
     };
-    
-    setTestimonials(prev => [newTestimonial, ...prev]);
+    setTestimonials((prev) => [newTestimonial, ...prev]);
     setFormData({ name: '', testimonial: '', rating: 0 });
   };
 
@@ -51,7 +49,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section id="Testimonials" className="py-10 px-4 md:px-16 bg-tertiary">
+    <section id="Testimonials" className="py-10 px-4 md:px-16 bg-tertiary z-10">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <div className="text-center mb-16">
@@ -68,7 +66,7 @@ const Testimonial = () => {
           <h3 className="text-2xl font-semibold text-black mb-6 text-center">
             Share Your Experience
           </h3>
-          
+
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Rating */}
             <div>
@@ -127,44 +125,49 @@ const Testimonial = () => {
         </div>
 
         {/* Testimonials Carousel */}
-        <h3 className="text-2xl font-semibold text-black mb-8 text-center"> 
+        <h3 className="text-2xl font-semibold text-black mb-8 text-center">
           Recent Testimonials
         </h3>
 
-        <div className="px-4 py-8 pb-10 min-h-[200px]"> 
-          <Swiper
-            key={testimonials.length}
-            modules={[Navigation, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 }
-            }}
-            style={{ paddingBottom: "50px" }} 
-          >
-            {testimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.id}>
-                <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow h-full mx-2 min-h-[200px] flex flex-col">
-                  <div className="flex gap-1 mb-3 text-secondary">
-                    {renderStars(testimonial.rating)}
+        {testimonials.length > 0 ? (
+          <div className="px-4 py-8 pb-10">
+            <Swiper
+              key={testimonials.length}
+              modules={[Navigation, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              autoHeight={true}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 4 },
+              }}
+              style={{ paddingBottom: '50px' }}
+            >
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.id}>
+                  <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow h-full mx-2 min-h-[200px] flex flex-col">
+                    <div className="flex gap-1 mb-3 text-secondary">
+                      {renderStars(testimonial.rating)}
+                    </div>
+                    <h4 className="text-lg font-semibold text-black mb-1">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-xs text-black/50 mb-2">{testimonial.date}</p>
+                    <blockquote className="text-black/70 italic text-sm flex-grow">
+                      "{testimonial.testimonial}"
+                    </blockquote>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-1">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-xs text-black/50 mb-2">
-                    {testimonial.date}
-                  </p>
-                  <blockquote className="text-black/70 italic text-sm flex-grow">
-                    "{testimonial.testimonial}"
-                  </blockquote>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        ) : (
+          <p className="text-center text-black/60 italic">
+            No testimonials yet — be the first to share!
+          </p>
+        )}
       </div>
     </section>
   );

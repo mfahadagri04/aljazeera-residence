@@ -1,4 +1,3 @@
-// components/Contact.jsx
 import React from 'react';
 import { 
   FaInstagram, 
@@ -13,7 +12,7 @@ import {
 
 const Contact = () => {
   return (
-    <footer id="Contacts" className="bg-gray-900 text-white py-6 mt-20 text-sm">
+    <footer id="Contacts" className="bg-gray-900 text-white py-6 mt-20 text-sm ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
