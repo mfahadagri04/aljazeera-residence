@@ -14,7 +14,11 @@ const Home = () => {
                     'Selamat Datang!',
                     1500,
                     '!مرحبا',
-                    1500, 
+                    1500,
+                    'Peu Haba!',
+                    1500,
+                    'Bienvenue!',
+                    1500,
                     ]}
                     wrapper="span"
                     speed={20}
