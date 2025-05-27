@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState(() => {
-    // Load from localStorage if available
     const saved = localStorage.getItem('testimonials');
     return saved ? JSON.parse(saved) : [];
   });
