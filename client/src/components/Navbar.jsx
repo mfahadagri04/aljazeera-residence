@@ -48,7 +48,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Layout (hidden lg:flex) */}
-                <div className="hidden lg:flex justify-between items-center h-16">
+                <div className="hidden lg:flex items-center justify-between h-16 relative">
                     {/* Desktop Logo */}
                     <a href="#" className="z-50">
                         <img 
