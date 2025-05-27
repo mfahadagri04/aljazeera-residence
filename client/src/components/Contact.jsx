@@ -1,7 +1,9 @@
 import React from 'react';
 import { 
   FaInstagram, 
-  FaTiktok, 
+  FaTiktok,
+  FaFacebookF,
+  FaYoutube, 
   FaAirbnb, 
   FaBuilding, 
   FaPlane, 
@@ -22,14 +24,14 @@ const Contact = () => {
             <div className="space-y-2">
               <div className="flex items-center justify-center md:justify-start">
                 <FaPhoneAlt className="mr-2 text-gray-400 text-xs" />
-                <a href="tel:+628118686368" className="hover:text-blue-400 transition-colors">
+                <a href="tel:+628118686368" className="hover:text-secondary transition-colors">
                   +62 811-8686-368
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <FaMapMarkerAlt className="mr-2 text-gray-400 text-xs" />
                 <address className="not-italic leading-tight">
-                  <span className="hover:text-blue-400 transition-colors">
+                  <span className="hover:text-secondary transition-colors">
                     Al Jazeera Residence<br />
                     Lrg. Lam Ara II No.:14 A-F, Rukoh, Kec. Syiah Kuala<br />
                     Kota Banda Aceh, Aceh 23112, Indonesia
@@ -43,19 +45,33 @@ const Contact = () => {
           <div className="text-center">
             <h3 className="text-base font-bold mb-3">Connect With Us</h3>
             <div className="flex justify-center space-x-5">
-              <a href="https://instagram.com/yourprofile" 
+              <a href="https://www.instagram.com/aljazeeraresidence/" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="hover:text-pink-500 transition-colors"
                  aria-label="Instagram">
                 <FaInstagram size={16} />
               </a>
-              <a href="https://tiktok.com/@yourprofile" 
+              <a href="https://www.tiktok.com/@aljazeeraresidencebna" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="hover:text-purple-500 transition-colors"
+                 aria-label="TikTok">
+                <FaTiktok size={16} />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61562003804970" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="hover:text-blue-600 transition-colors"
+                 aria-label="Facebook">
+                <FaFacebookF size={16} />
+              </a>
+              <a href="https://www.youtube.com/@AljazeeraResidence" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="hover:text-red-500 transition-colors"
-                 aria-label="TikTok">
-                <FaTiktok size={16} />
+                 aria-label="Youtube">
+                <FaYoutube size={16} />
               </a>
             </div>
           </div>
@@ -64,19 +80,19 @@ const Contact = () => {
           <div className="text-center md:text-right">
             <h3 className="text-base font-bold mb-3">Book Your Stay</h3>
             <div className="flex flex-col space-y-1.5">
-              <a href="#" className="hover:text-[#FF5A5F] transition-colors">
+              <a href="https://www.airbnb.ca/rooms/1315621126718301326?locale=en&_set_bev_on_new_domain=1748334424_EANzcwNjgwZWZkNj&source_impression_id=p3_1748334425_P3kIk5RTh1VOCDsh" className="hover:text-[#FF5A5F] transition-colors">
                 <FaAirbnb className="inline-block mr-1 text-xs" />
                 Airbnb
               </a>
-              <a href="#" className="hover:text-[#003580] transition-colors">
+              <a href="https://www.booking.com/hotel/id/aljazeera-residence.html" className="hover:text-[#003580] transition-colors">
                 <FaBuilding className="inline-block mr-1 text-xs" />
                 Booking.com
               </a>
-              <a href="#" className="hover:text-[#F78D1D] transition-colors">
+              {/* <a href="#" className="hover:text-[#F78D1D] transition-colors">
                 <FaBed className="inline-block mr-1 text-xs" />
                 Agoda
-              </a>
-              <a href="#" className="hover:text-[#00B2D6] transition-colors">
+              </a> */}
+              <a href="#https://www.skyscanner.ca/hotels/indonesia/banda-aceh-hotels/aljazeera-residence/ht-222376782?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.com" className="hover:text-[#00B2D6] transition-colors">
                 <FaPlane className="inline-block mr-1 text-xs" />
                 Skyscanner
               </a>
