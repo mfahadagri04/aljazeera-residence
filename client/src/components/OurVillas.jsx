@@ -11,10 +11,10 @@ import alaziziyah from "../assets/villas/Al-Aziziyah.jpg";
 const OurVillas = () => {
   const threeBedroomVillas = [
     {
-      name: "Al-Khor",
+      name: "Al-Rayyan",
       type: "3-Bedroom Villa",
-      img: alkhor,
-      description: "A spacious villa with modern interiors, ideal for families or group stays near the sea breeze of Al-Khor."
+      img: alrayyan,
+      description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy."
     },
     {
       name: "Al-Thakira", 
@@ -26,10 +26,10 @@ const OurVillas = () => {
 
   const twoBedroomVillas = [
     {
-      name: "Al-Rayyan",
+      name: "Al-Khor",
       type: "2-Bedroom Villa",
-      img: alrayyan,
-      description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy."
+      img: alkhor,
+      description: "A spacious villa with modern interiors, ideal for families or group stays near the sea breeze of Al-Khor."
     },
     {
       name: "Ras Laffan",

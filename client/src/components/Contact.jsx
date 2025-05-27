@@ -25,7 +25,7 @@ const Contact = () => {
               <div className="flex items-center justify-center md:justify-start">
                 <FaPhoneAlt className="mr-2 text-gray-400 text-xs" />
                 <a href="tel:+628118686368" className="hover:text-secondary transition-colors">
-                  +62 811-8686-368
+                  +62 823-7679-7060
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start">
@@ -33,8 +33,8 @@ const Contact = () => {
                 <address className="not-italic leading-tight">
                   <span className="hover:text-secondary transition-colors">
                     Al Jazeera Residence<br />
-                    Lrg. Lam Ara II No.:14 A-F, Rukoh, Kec. Syiah Kuala<br />
-                    Kota Banda Aceh, Aceh 23112, Indonesia
+                    Lrg. Lam Ara III No.14 A-F, Rukoh<br />
+                    Darussalam, Banda Aceh
                   </span>
                 </address>
               </div>
