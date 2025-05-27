@@ -13,23 +13,23 @@ import {
 
 const Contact = () => {
   return (
-    <footer id="Contacts" className="bg-gray-900 text-white py-12 mt-20">
+    <footer id="Contacts" className="bg-gray-900 text-white py-6 mt-20 text-sm">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Contact Section */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-            <div className="space-y-3">
+            <h3 className="text-base font-bold mb-3">Contact Information</h3>
+            <div className="space-y-2">
               <div className="flex items-center justify-center md:justify-start">
-                <FaPhoneAlt className="mr-1 text-gray-400" />
-                <a href="tel:+966555123456" className="hover:text-blue-400 transition-colors">
+                <FaPhoneAlt className="mr-2 text-gray-400 text-xs" />
+                <a href="tel:+628118686368" className="hover:text-blue-400 transition-colors">
                   +62 811-8686-368
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start">
-                <FaMapMarkerAlt className="mr-1 text-gray-400" />
-                <address className="not-italic">
+                <FaMapMarkerAlt className="mr-2 text-gray-400 text-xs" />
+                <address className="not-italic leading-tight">
                   <span className="hover:text-blue-400 transition-colors">
                     Al Jazeera Residence<br />
                     Lrg. Lam Ara II No.:14 A-F, Rukoh, Kec. Syiah Kuala<br />
@@ -42,43 +42,43 @@ const Contact = () => {
 
           {/* Social Media Section */}
           <div className="text-center">
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex justify-center space-x-6">
+            <h3 className="text-base font-bold mb-3">Connect With Us</h3>
+            <div className="flex justify-center space-x-5">
               <a href="https://instagram.com/yourprofile" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="hover:text-pink-500 transition-colors"
                  aria-label="Instagram">
-                <FaInstagram size={20} />
+                <FaInstagram size={16} />
               </a>
               <a href="https://tiktok.com/@yourprofile" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="hover:text-red-500 transition-colors"
                  aria-label="TikTok">
-                <FaTiktok size={20} />
+                <FaTiktok size={16} />
               </a>
             </div>
           </div>
 
           {/* Booking Partners Section */}
           <div className="text-center md:text-right">
-            <h3 className="text-xl font-bold mb-4">Book Your Stay</h3>
-            <div className="flex flex-col space-y-2">
+            <h3 className="text-base font-bold mb-3">Book Your Stay</h3>
+            <div className="flex flex-col space-y-1.5">
               <a href="#" className="hover:text-[#FF5A5F] transition-colors">
-                <FaAirbnb className="inline-block mr-1" />
+                <FaAirbnb className="inline-block mr-1 text-xs" />
                 Airbnb
               </a>
               <a href="#" className="hover:text-[#003580] transition-colors">
-                <FaBuilding className="inline-block mr-1" />
+                <FaBuilding className="inline-block mr-1 text-xs" />
                 Booking.com
               </a>
               <a href="#" className="hover:text-[#F78D1D] transition-colors">
-                <FaBed className="inline-block mr-1" />
+                <FaBed className="inline-block mr-1 text-xs" />
                 Agoda
               </a>
               <a href="#" className="hover:text-[#00B2D6] transition-colors">
-                <FaPlane className="inline-block mr-1" />
+                <FaPlane className="inline-block mr-1 text-xs" />
                 Skyscanner
               </a>
             </div>
@@ -86,9 +86,9 @@ const Contact = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="mt-6 pt-2 border-t border-gray-800 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Al Jazeera Residence. All rights reserved.<br />
+        <div className="mt-4 pt-2 border-t border-gray-800 text-center">
+          <p className="text-gray-400 text-xs">
+            &copy; {new Date().getFullYear()} Al Jazeera Residence. All rights reserved.
           </p>
         </div>
       </div>
