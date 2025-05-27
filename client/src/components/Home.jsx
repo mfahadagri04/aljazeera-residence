@@ -29,9 +29,9 @@ const Home = () => {
                     Al Jazeera Homestay in Banda Aceh offers a warm and welcoming atmosphere, combining traditional Acehnese hospitality with comfortable accommodations, making it an ideal stay for travelers seeking a peaceful and authentic local experience.
                 </p>
 
-                <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">
+                {/* <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">
                     Reservation
-                </a>
+                </a> */}
             </div>
         </section>
     );

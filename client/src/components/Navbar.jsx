@@ -75,9 +75,9 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Book Now Button */}
-                    <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full hover:bg-secondary duration-300 text-base">
+                    {/* <button className="border-2 border-secondary text-white font-semibold px-4 py-1 rounded-full hover:bg-secondary duration-300 text-base">
                         Book Now
-                    </button>
+                    </button> */}
                 </div>
             </div>
 
