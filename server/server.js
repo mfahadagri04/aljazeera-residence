@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-// Initialize Express
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -11,62 +10,90 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 30000,  // 30-second timeout
-      socketTimeoutMS: 45000,
-      maxPoolSize: 5,
-    });
-    console.log('MongoDB connected!');
-  } catch (err) {
-    console.error('MongoDB connection failed:', err);
-    process.exit(1); // Crash the app to force Render to restart
-  }
-};
-
-// Handle connection events
-mongoose.connection.on('connected', () => 
-  console.log('Mongoose connected to DB'));
-
-mongoose.connection.on('error', (err) => 
-  console.error('Mongoose connection error:', err));
-
-module.exports = connectDB;
-
-// Add this to see detailed Mongoose logs
-mongoose.set('debug', true);
-
-// Corrected Testimonial Schema
+// Testimonial Schema
 const testimonialSchema = new mongoose.Schema({
-  name: String,
-  testimonial: String,
-  rating: Number,
+  name: { type: String, required: true },
+  testimonial: { type: String, required: true },
+  rating: { type: Number, min: 1, max: 5, required: true },
   date: { type: Date, default: Date.now }
 });
 
-// Create the model correctly
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 
-// API Routes
+// Enhanced MongoDB Connection
+const connectDB = async () => {
+  try {
+    mongoose.set('strictQuery', true);
+    mongoose.set('debug', true);
+    
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
+      maxPoolSize: 10,
+      retryWrites: true,
+      w: 'majority'
+    });
+    
+    console.log('MongoDB connected successfully!');
+    
+    // Start server only after DB connection
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+    
+  } catch (err) {
+    console.error('MongoDB connection failed:', err);
+    process.exit(1);
+  }
+};
+
+// Connection events
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to DB');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('Mongoose connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('Mongoose disconnected');
+});
+
+// API Routes with better error handling
 app.post('/api/testimonials', async (req, res) => {
   try {
-    delete req.body._id; // Critical: Prevent client-side _id injection
-    const newTestimonial = new Testimonial(req.body);
-    await newTestimonial.save();
+    if (!req.body.name || !req.body.testimonial || !req.body.rating) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+    
+    const newTestimonial = new Testimonial({
+      name: req.body.name,
+      testimonial: req.body.testimonial,
+      rating: req.body.rating,
+      // date will be automatically added
+    });
+    
+    await newTestimonial.save({ timeout: 15000 }); // 15s timeout for the operation
     res.status(201).json(newTestimonial);
+    
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    console.error('Error creating testimonial:', err);
+    res.status(500).json({ 
+      message: err.message.includes('buffering timed out') 
+        ? 'Database operation timed out' 
+        : 'Server error' 
+    });
   }
 });
 
 app.get('/api/testimonials', async (req, res) => {
   try {
-    const testimonials = await Testimonial.find().sort({ createdAt: -1 });
+    const testimonials = await Testimonial.find().sort({ date: -1 }).maxTimeMS(10000);
     res.json(testimonials);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error('Error fetching testimonials:', err);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
@@ -74,7 +101,5 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
-// Start Server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// Initialize the connection
+connectDB();
