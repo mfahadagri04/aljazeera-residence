@@ -38,15 +38,15 @@ module.exports = connectDB;
 // Add this to see detailed Mongoose logs
 mongoose.set('debug', true);
 
-// Testimonial Schema
-const testimonialSchema = mongoose.model('Testimonial', {
+// Corrected Testimonial Schema
+const testimonialSchema = new mongoose.Schema({
   name: String,
   testimonial: String,
   rating: Number,
   date: { type: Date, default: Date.now }
 });
 
-
+// Create the model correctly
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 
 // API Routes
@@ -61,7 +61,6 @@ app.post('/api/testimonials', async (req, res) => {
   }
 });
 
-
 app.get('/api/testimonials', async (req, res) => {
   try {
     const testimonials = await Testimonial.find().sort({ createdAt: -1 });
@@ -74,7 +73,6 @@ app.get('/api/testimonials', async (req, res) => {
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
-
 
 // Start Server
 app.listen(port, () => {
