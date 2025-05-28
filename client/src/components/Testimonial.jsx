@@ -30,15 +30,19 @@ const Testimonial = () => {
     fetchTestimonials();
   }, []);
 
-  // ✅ Submit testimonial to MongoDB
+  // Submit testimonial to MongoDB
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("Submitting:", formData);
       const res = await axios.post('https://aljazeera-residence.onrender.com/api/testimonials', formData);
-      setTestimonials((prev) => [res.data, ...prev]); // prepend new testimonial
+      console.log("Response:", res);
+      setTestimonials((prev) => [res.data, ...prev]);
       setFormData({ name: '', testimonial: '', rating: 0 });
     } catch (err) {
-      console.error('Error submitting testimonial:', err);
+      console.error('Full error:', err);
+      console.error('Error response data:', err.response?.data);
+      console.error('Error status:', err.response?.status);
     }
   };
 
@@ -118,7 +122,7 @@ const Testimonial = () => {
             {/* Submit Button */}
             <div className="text-center">
               <button
-                type="submit"
+                type="handleSubmit" 
                 className="bg-secondary text-primary px-8 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-secondary transition-all duration-200"
               >
                 Submit Testimonial
@@ -149,7 +153,7 @@ const Testimonial = () => {
               style={{ paddingBottom: '50px' }}
             >
               {testimonials.map((testimonial) => (
-                <SwiperSlide key={testimonial.id}>
+                <SwiperSlide key={testimonial._id}>
                   <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow h-full mx-2 min-h-[200px] flex flex-col">
                     <div className="flex gap-1 mb-3 text-secondary">
                       {renderStars(testimonial.rating)}
