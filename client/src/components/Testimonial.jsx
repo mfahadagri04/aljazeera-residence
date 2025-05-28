@@ -34,15 +34,24 @@ const Testimonial = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("Submitting:", formData);
-      const res = await axios.post('https://aljazeera-residence.onrender.com/api/testimonials', formData);
-      console.log("Response:", res);
+      // Create a clean payload without _id
+      const payload = {
+        name: formData.name,
+        testimonial: formData.testimonial,
+        rating: formData.rating
+      };
+
+      console.log("Submitting:", payload);
+      const res = await axios.post(
+        'https://aljazeera-residence.onrender.com/api/testimonials', 
+        payload
+      );
+      
+      console.log("Response:", res.data);
       setTestimonials((prev) => [res.data, ...prev]);
       setFormData({ name: '', testimonial: '', rating: 0 });
     } catch (err) {
-      console.error('Full error:', err);
-      console.error('Error response data:', err.response?.data);
-      console.error('Error status:', err.response?.status);
+      console.error('Error:', err.response?.data || err.message);
     }
   };
 

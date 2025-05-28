@@ -12,16 +12,39 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB Atlas!'))
-  .catch(err => console.error('Connection failed:', err));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 30000,  // 30-second timeout
+      socketTimeoutMS: 45000,
+      maxPoolSize: 5,
+    });
+    console.log('MongoDB connected!');
+  } catch (err) {
+    console.error('MongoDB connection failed:', err);
+    process.exit(1); // Crash the app to force Render to restart
+  }
+};
+
+// Handle connection events
+mongoose.connection.on('connected', () => 
+  console.log('Mongoose connected to DB'));
+
+mongoose.connection.on('error', (err) => 
+  console.error('Mongoose connection error:', err));
+
+module.exports = connectDB;
+
+// Add this to see detailed Mongoose logs
+mongoose.set('debug', true);
 
 // Testimonial Schema
-const testimonialSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  testimonial: { type: String, required: true },
-  rating: { type: Number, required: true, min: 1, max: 5 },
-}, { timestamps: true });
+const testimonialSchema = mongoose.model('Testimonial', {
+  name: String,
+  testimonial: String,
+  rating: Number,
+  date: { type: Date, default: Date.now }
+});
 
 
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
@@ -29,6 +52,7 @@ const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 // API Routes
 app.post('/api/testimonials', async (req, res) => {
   try {
+    delete req.body._id; // Critical: Prevent client-side _id injection
     const newTestimonial = new Testimonial(req.body);
     await newTestimonial.save();
     res.status(201).json(newTestimonial);
