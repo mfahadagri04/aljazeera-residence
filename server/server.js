@@ -21,18 +21,15 @@ const testimonialSchema = new mongoose.Schema({
   name: { type: String, required: true },
   testimonial: { type: String, required: true },
   rating: { type: Number, required: true, min: 1, max: 5 },
-  date: { type: String, required: true }
-});
+}, { timestamps: true });
+
 
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 
 // API Routes
 app.post('/api/testimonials', async (req, res) => {
   try {
-    const newTestimonial = new Testimonial({
-      ...req.body,
-      date: new Date().toLocaleDateString('en-CA')
-    });
+    const newTestimonial = new Testimonial(req.body);
     await newTestimonial.save();
     res.status(201).json(newTestimonial);
   } catch (err) {
@@ -40,14 +37,20 @@ app.post('/api/testimonials', async (req, res) => {
   }
 });
 
+
 app.get('/api/testimonials', async (req, res) => {
   try {
-    const testimonials = await Testimonial.find().sort({ date: -1 });
+    const testimonials = await Testimonial.find().sort({ createdAt: -1 });
     res.json(testimonials);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
+
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
 
 // Start Server
 app.listen(port, () => {

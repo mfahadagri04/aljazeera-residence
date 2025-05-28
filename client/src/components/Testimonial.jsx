@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// localStorage.removeItem('testimonials');
+localStorage.removeItem('testimonials');
 
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState(() => {
