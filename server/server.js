@@ -15,7 +15,15 @@ const testimonialSchema = new mongoose.Schema({
   name: { type: String, required: true },
   testimonial: { type: String, required: true },
   rating: { type: Number, min: 1, max: 5, required: true },
-  date: { type: Date, default: Date.now }
+  date: { 
+    type: Date, 
+    default: Date.now,
+    get: (date) => date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
 });
 
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
