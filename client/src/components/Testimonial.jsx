@@ -122,7 +122,7 @@ const Testimonial = () => {
             {/* Submit Button */}
             <div className="text-center">
               <button
-                type="handleSubmit" 
+                type="submit" 
                 className="bg-secondary text-primary px-8 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-secondary transition-all duration-200"
               >
                 Submit Testimonial
