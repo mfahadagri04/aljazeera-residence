@@ -2,41 +2,44 @@ import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import axios from 'axios';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-localStorage.removeItem('testimonials');
+//localStorage.removeItem('testimonials');
 
 const Testimonial = () => {
-  const [testimonials, setTestimonials] = useState(() => {
-    const saved = localStorage.getItem('testimonials');
-    return saved ? JSON.parse(saved) : [];
-  });
-
+  const [testimonials, setTestimonials] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     testimonial: '',
     rating: 0,
   });
 
+  // ✅ Fetch testimonials from MongoDB
   useEffect(() => {
-    localStorage.setItem('testimonials', JSON.stringify(testimonials));
-  }, [testimonials]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newTestimonial = {
-      ...formData,
-      date: new Date().toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      }),
-      id: Date.now(),
+    const fetchTestimonials = async () => {
+      try {
+        const res = await axios.get('https://aljazeera-residence.onrender.com/api/testimonials');
+        setTestimonials(res.data);
+      } catch (err) {
+        console.error('Error fetching testimonials:', err);
+      }
     };
-    setTestimonials((prev) => [newTestimonial, ...prev]);
-    setFormData({ name: '', testimonial: '', rating: 0 });
+    fetchTestimonials();
+  }, []);
+
+  // ✅ Submit testimonial to MongoDB
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('https://aljazeera-residence.onrender.com/api/testimonials', formData);
+      setTestimonials((prev) => [res.data, ...prev]); // prepend new testimonial
+      setFormData({ name: '', testimonial: '', rating: 0 });
+    } catch (err) {
+      console.error('Error submitting testimonial:', err);
+    }
   };
 
   const renderStars = (rating) => {
