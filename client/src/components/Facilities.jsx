@@ -64,20 +64,22 @@ const Facilities = () => {
               className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 border border-amber-100"
             >
               {/* Text on top */}
-              <div className="bg-orange-500 p-5 text-center">
-                <h3 className="text-xl md:text-2xl font-bold text-white">
+              <div className="bg-orange-500 p-4 text-center">
+                <h3 className="text-lg font-bold text-white">
                   {facility.name}
                 </h3>
-                <p className="text-amber-100 font-light mt-1">
+                <p className="text-white text-sm font-light mt-1">
                   {facility.description}
                 </p>
               </div>
               
-              {/* Image below */}
+              {/* Image below - FIXED */}
               <div className="h-52 overflow-hidden">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full flex items-center justify-center text-gray-500">
-                  {facility.name} Image
-                </div>
+                <img 
+                  src={facility.image} 
+                  alt={facility.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
