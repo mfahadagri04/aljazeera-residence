@@ -1,46 +1,47 @@
 import React from 'react';
+import comingsoon from "../assets/comingsoon.jpg";
 
 const Facilities = () => {
   const facilities = [
     { 
       name: 'Prayer Room', 
       description: 'Peaceful space for prayers',
-      image: '/images/prayer-room.jpg'
+      image: comingsoon
     },
     { 
       name: 'Ablution Area', 
       description: 'Cleansing facilities for worship',
-      image: '/images/ablution.jpg'
+      image: comingsoon
     },
     { 
       name: 'Kids Play Area', 
       description: 'Safe and fun for children',
-      image: '/images/play-area.jpg'
+      image: comingsoon
     },
     { 
       name: 'Coffee Corner', 
       description: 'Premium coffee and refreshments',
-      image: '/images/coffee-corner.jpg'
+      image: comingsoon
     },
     { 
       name: 'High Fences', 
       description: 'Privacy and security ensured',
-      image: '/images/fences.jpg'
+      image: comingsoon
     },
     { 
       name: '24/7 CCTV', 
       description: 'Round-the-clock surveillance',
-      image: '/images/cctv.jpg'
+      image: comingsoon
     },
     { 
       name: '24/7 Office Hours', 
       description: 'Always available for assistance',
-      image: '/images/reception.jpg'
+      image: comingsoon
     },
     { 
       name: 'Flexible Accommodation', 
       description: 'Tailored stays for your needs',
-      image: '/images/accommodation.jpg'
+      image: comingsoon
     }
   ];
 
@@ -51,7 +52,7 @@ const Facilities = () => {
           <h2 className="text-5xl font-bold text-center text-gray-800 mb-12">
             Support Facilities
           </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-black/80 max-w-2xl mx-auto">
             Comprehensive amenities designed for your comfort and convenience
           </p>
         </div>
@@ -63,9 +64,13 @@ const Facilities = () => {
               className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 border border-amber-100"
             >
               {/* Text on top */}
-              <div className="bg-gradient-to-r from-amber-800 to-amber-600 p-5 text-center">
-                <h3 className="text-xl md:text-2xl font-bold text-white">{facility.name}</h3>
-                <p className="text-amber-100 font-light mt-1">{facility.description}</p>
+              <div className="bg-orange-500 p-5 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-white">
+                  {facility.name}
+                </h3>
+                <p className="text-amber-100 font-light mt-1">
+                  {facility.description}
+                </p>
               </div>
               
               {/* Image below */}
