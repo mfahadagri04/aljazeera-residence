@@ -9,7 +9,7 @@ import althakira from "/assets/villas/AL-THAKIRA/AL-THAKIRA-01.jpg";
 import alrayyan from "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
 import raslaffan from "/assets/villas/RasLaffan.jpg";
 import alruwais from "/assets/villas/Al-Ruwais.jpg";
-import alaziziyah from "/assets/villas/Al-Aziziyah.jpg";
+import alaziziyah from "/assets/villas/AL-AZIZIYAH/AL-AZIZIYAH-01.jpg";
 
 import galleryData from "../data/galleryData.json";
 
@@ -65,7 +65,7 @@ const OurVillas = () => {
       img: alaziziyah, 
       //description: "Located in the heart of the city, this stylish villa offers urban convenience and tranquil living.",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: generateGallery("AL-AZIZIYAH")
     }
   ];
 
