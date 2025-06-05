@@ -88,7 +88,7 @@ const Facilities = () => {
           {facilities.map((facility, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 border border-amber-100"
+              className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 border"
             >
               {/* Text on top */}
               <div className="bg-gray-50 p-4 text-center">
