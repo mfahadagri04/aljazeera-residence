@@ -145,16 +145,18 @@ const VillaCard = ({ name, img, features = [], gallery = [] }) => {
           </div>
 
           {/* Back of the card */}
-          <div className="absolute inset-0 bg-white rounded-2xl shadow-md p-5 transform rotate-y-180 backface-hidden h-full w-full">
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{name} Features</h3>
-            <ul className="list-disc pl-5 text-sm text-gray-600 mb-4">
-              {features.map((feat, idx) => (
-                <li key={idx}>{feat}</li>
-              ))}
-            </ul>
+          <div className="absolute inset-0 bg-white rounded-2xl shadow-md p-5 transform rotate-y-180 backface-hidden h-full w-full flex flex-col">
+            <div className="flex-grow flex flex-col justify-center items-center">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">{name} Features</h3>
+              <ul className="list-disc text-sm text-gray-600 space-y-2">
+                {features.map((feat, idx) => (
+                  <li key={idx} className="text-center">{feat}</li>
+                ))}
+              </ul>
+            </div>
             <button
               onClick={toggleFlip}
-              className="mt-auto w-full bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-sm font-semibold transition mt-4"
             >
               Back
             </button>
