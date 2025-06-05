@@ -13,7 +13,7 @@ const Facilities = () => {
       image: comingsoon
     },
     { 
-      name: 'Ablution Area', 
+      name: 'Ablution Station', 
       description: 'Cleansing facilities for worship',
       image: comingsoon
     },
