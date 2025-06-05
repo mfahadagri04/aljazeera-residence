@@ -6,7 +6,7 @@ import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
 import alkhor from "../assets/villas/Al-Khor.jpg";
 import althakira from "../assets/villas/AlThakira.jpg";
-import alrayyan from "../assets/villas/Al-Rayyan.jpg";
+import alrayyan from "../assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
 import raslaffan from "../assets/villas/RasLaffan.jpg";
 import alruwais from "../assets/villas/Al-Ruwais.jpg";
 import alaziziyah from "../assets/villas/Al-Aziziyah.jpg";
@@ -18,7 +18,7 @@ const OurVillas = () => {
       img: alrayyan,
       //description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy.",
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: ["../assets/villas/AL-RAYYAN"]
     },
     {
       name: "Al-Thakira", 
