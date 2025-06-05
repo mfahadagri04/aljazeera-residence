@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import comingsoon from "../assets/comingsoon.jpg";
+import comingsoon from "/assets/comingsoon.jpg";
 
 const Facilities = () => {
   const [currentImage, setCurrentImage] = useState(null);

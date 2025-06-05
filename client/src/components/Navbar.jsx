@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from '../assets/AJZ-logo.png';
+import logo from '/assets/AJZ-logo.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {

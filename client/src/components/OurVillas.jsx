@@ -4,12 +4,21 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
-import alkhor from "../assets/villas/Al-Khor.jpg";
-import althakira from "../assets/villas/AlThakira.jpg";
-import alrayyan from "../assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
-import raslaffan from "../assets/villas/RasLaffan.jpg";
-import alruwais from "../assets/villas/Al-Ruwais.jpg";
-import alaziziyah from "../assets/villas/Al-Aziziyah.jpg";
+import alkhor from "/assets/villas/Al-Khor.jpg";
+import althakira from "/assets/villas/AlThakira.jpg";
+import alrayyan from "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
+import raslaffan from "/assets/villas/RasLaffan.jpg";
+import alruwais from "/assets/villas/Al-Ruwais.jpg";
+import alaziziyah from "/assets/villas/Al-Aziziyah.jpg";
+
+import galleryData from "../data/galleryData.json";
+
+const generateGallery = (villaName) => {
+  const count = galleryData[villaName];
+  return Array.from({ length: count }, (_, i) => 
+    `/assets/villas/${villaName}/${villaName}-${String(i + 1).padStart(2, '0')}.jpg`
+  );
+};
 
 const OurVillas = () => {
   const threeBedroomVillas = [
@@ -18,7 +27,7 @@ const OurVillas = () => {
       img: alrayyan,
       //description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy.",
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: ["../assets/villas/AL-RAYYAN"]
+      gallery: generateGallery("AL-RAYYAN")
     },
     {
       name: "Al-Thakira", 
@@ -171,7 +180,11 @@ const VillaCard = ({ name, img, features = [], gallery = [] }) => {
             <FaTimes />
           </button>
           <div className="relative w-11/12 max-w-3xl bg-white rounded-lg overflow-hidden">
-            <img src={gallery[currentSlide]} alt={`${name} ${currentSlide + 1}`} className="w-full max-h-[80vh] object-contain" />
+            <img 
+              src={gallery[currentSlide]} 
+              alt={`${name} ${currentSlide + 1}`} 
+              className="max-w-full max-h-[90vh] object-contain mx-auto"
+            />
             <div className="absolute inset-y-0 left-0 flex items-center">
               <button onClick={prevSlide} className="text-white text-2xl p-2 bg-black bg-opacity-50 hover:bg-opacity-70">
                 <FaArrowLeft />
