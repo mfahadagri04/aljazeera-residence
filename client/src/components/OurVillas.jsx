@@ -34,7 +34,7 @@ const OurVillas = () => {
       img: althakira, 
       //description: "Elegant and refined, this villa blends Qatari charm with contemporary design for a luxurious stay.",
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: generateGallery("AL-THAKIRA")
     }
   ];
 
