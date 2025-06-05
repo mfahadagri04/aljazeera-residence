@@ -32,7 +32,8 @@ const Home = () => {
                     Al Jazeera Homestay in Banda Aceh offers a warm and welcoming atmosphere, blending traditional Acehnese hospitality with modern comfort. With its cozy accommodations, it’s the perfect choice for travelers seeking a peaceful and authentic local experience.
                 </p>
                 <p className="text-primary text-sm md:text-base lg:text-lg mb-8 max-w-2xl font-bold"> 
-                    The Homey Syariah Homestay. Feel at home.
+                    The Homey Syariah Homestay. <br />
+                    Feel at home.
                 </p>
 
                 {/* <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">

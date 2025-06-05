@@ -12,13 +12,11 @@ const OurVillas = () => {
   const threeBedroomVillas = [
     {
       name: "Al-Rayyan",
-      type: "3-Bedroom Villa",
       img: alrayyan,
       description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy."
     },
     {
       name: "Al-Thakira", 
-      type: "3-Bedroom Villa",
       img: althakira, 
       description: "Elegant and refined, this villa blends Qatari charm with contemporary design for a luxurious stay."
     }
@@ -27,25 +25,21 @@ const OurVillas = () => {
   const twoBedroomVillas = [
     {
       name: "Al-Khor",
-      type: "2-Bedroom Villa",
       img: alkhor,
       description: "A spacious villa with modern interiors, ideal for families or group stays near the sea breeze of Al-Khor."
     },
     {
       name: "Ras Laffan",
-      type: "2-Bedroom Villa",
       img: raslaffan, 
       description: "Experience calm luxury in this beautifully furnished villa, offering serene views and refined details."
     },
     {
       name: "Al-Ruwais",
-      type: "2-Bedroom Villa", 
       img: alruwais,
       description: "Enjoy a coastal escape with soft colors, minimalist décor, and a peaceful ambiance in Al-Ruwais."
     },
     {
       name: "Al-Aziziyah",
-      type: "2-Bedroom Villa",
       img: alaziziyah, 
       description: "Located in the heart of the city, this stylish villa offers urban convenience and tranquil living."
     }
