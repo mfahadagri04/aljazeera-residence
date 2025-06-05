@@ -1,22 +1,18 @@
-import React from "react";
-import Navbar from "./Navbar";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
-import alkhor from "/assets/villas/Al-Khor.jpg";
-import althakira from "/assets/villas/AL-THAKIRA/AL-THAKIRA-01.jpg";
-import alrayyan from "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
-import raslaffan from "/assets/villas/RasLaffan.jpg";
-import alruwais from "/assets/villas/Al-Ruwais.jpg";
-import alaziziyah from "/assets/villas/AL-AZIZIYAH/AL-AZIZIYAH-01.jpg";
-
-import galleryData from "../data/galleryData.json";
-
 const generateGallery = (villaName) => {
-  const count = galleryData[villaName];
-  return Array.from({ length: count }, (_, i) => 
-    `/assets/villas/${villaName}/${villaName}-${String(i + 1).padStart(2, '0')}.jpg`
+  const galleryData = {
+    "AL-RAYYAN": 19,
+    "AL-THAKIRA": 19,
+    "AL-AZIZIYAH": 16,
+    "AL-KHOR": 0,
+    "RAS-LAFFAN": 0,
+    "AL-RUWAIS": 0
+  };
+  const count = galleryData[villaName] || 0;
+  return Array.from({ length: count }, (_, i) =>
+    `/assets/villas/${villaName}/${villaName}-${String(i + 1).padStart(2, "0")}.jpg`
   );
 };
 
@@ -24,56 +20,48 @@ const OurVillas = () => {
   const threeBedroomVillas = [
     {
       name: "Al-Rayyan",
-      img: alrayyan,
-      //description: "A cozy retreat with natural lighting, perfect for couples or small families seeking comfort and privacy.",
+      img: "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg",
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-RAYYAN")
+      gallery: generateGallery("AL-RAYYAN"),
     },
     {
-      name: "Al-Thakira", 
-      img: althakira, 
-      //description: "Elegant and refined, this villa blends Qatari charm with contemporary design for a luxurious stay.",
+      name: "Al-Thakira",
+      img: "/assets/villas/AL-THAKIRA/AL-THAKIRA-01.jpg",
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-THAKIRA")
-    }
+      gallery: generateGallery("AL-THAKIRA"),
+    },
   ];
 
   const twoBedroomVillas = [
     {
       name: "Al-Khor",
-      img: alkhor,
-      //description: "A spacious villa with modern interiors, ideal for families or group stays near the sea breeze of Al-Khor.",
+      img: "/assets/villas/Al-Khor.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: generateGallery("AL-KHOR"),
     },
     {
       name: "Ras Laffan",
-      img: raslaffan, 
-      //description: "Experience calm luxury in this beautifully furnished villa, offering serene views and refined details.",
+      img: "/assets/villas/RasLaffan.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: generateGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
-      img: alruwais,
-      //description: "Enjoy a coastal escape with soft colors, minimalist décor, and a peaceful ambiance in Al-Ruwais.",
+      img: "/assets/villas/Al-Ruwais.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: [alrayyan, althakira, alkhor]
+      gallery: generateGallery("AL-RUWAIS"),
     },
     {
       name: "Al-Aziziyah",
-      img: alaziziyah, 
-      //description: "Located in the heart of the city, this stylish villa offers urban convenience and tranquil living.",
+      img: "/assets/villas/AL-AZIZIYAH/AL-AZIZIYAH-01.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-AZIZIYAH")
-    }
+      gallery: generateGallery("AL-AZIZIYAH"),
+    },
   ];
 
   return (
     <section id="Villas" className="py-10 px-4 md:px-16 bg-tertiary">
-      <h2 className="text-5xl font-bold text-center text-gray-800 mb-12">
-        Our Villas
-      </h2>
+      <h2 className="text-5xl font-bold text-center text-gray-800 mb-12">Our Villas</h2>
 
       {/* 3-Bedroom Villas */}
       <div className="mb-16">
@@ -91,7 +79,7 @@ const OurVillas = () => {
       {/* 2-Bedroom Villas */}
       <div>
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
-          2-Bedroom Villas 
+          2-Bedroom Villas
           <p className="text-sm font-normal text-gray-600 mt-1">Rp 750.000/night</p>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
@@ -124,25 +112,16 @@ const VillaCard = ({ name, img, features = [], gallery = [] }) => {
         <div className={`relative transition-transform duration-700 transform-style-preserve-3d ${flipped ? "rotate-y-180" : ""}`}>
           {/* Front of the card */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col h-full">
-            
-            {/* Title */}
-            <h3 className="text-1.5xl font-bold text-center text-gray-800 py-2 bg-gray-50">
-              {name}
-            </h3>
-
-            {/* Image */}
-            <div
-              className="overflow-hidden h-60 cursor-pointer"
-              onClick={openGallery}
-            >
+            <h3 className="text-xl font-bold text-center text-gray-800 py-2 bg-gray-50">{name}</h3>
+            <div className="overflow-hidden h-60 cursor-pointer" onClick={openGallery}>
               <img
                 src={img}
                 alt={name}
+                width={500}
+                height={240}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
             </div>
-
-            {/* Button */}
             <div className="p-4 bg-white">
               <button
                 onClick={toggleFlip}
@@ -174,24 +153,33 @@ const VillaCard = ({ name, img, features = [], gallery = [] }) => {
       </div>
 
       {/* Gallery Modal */}
-      {isGalleryOpen && (
+      {isGalleryOpen && gallery.length > 0 && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center">
-          <button onClick={closeGallery} className="absolute top-4 right-4 text-white text-2xl">
+          <button
+            onClick={closeGallery}
+            className="absolute top-4 right-4 text-white text-2xl"
+          >
             <FaTimes />
           </button>
           <div className="relative w-11/12 max-w-3xl bg-white rounded-lg overflow-hidden">
-            <img 
-              src={gallery[currentSlide]} 
-              alt={`${name} ${currentSlide + 1}`} 
+            <img
+              src={gallery[currentSlide]}
+              alt={`${name} ${currentSlide + 1}`}
               className="max-w-full max-h-[90vh] object-contain mx-auto"
             />
             <div className="absolute inset-y-0 left-0 flex items-center">
-              <button onClick={prevSlide} className="text-white text-2xl p-2 bg-black bg-opacity-50 hover:bg-opacity-70">
+              <button
+                onClick={prevSlide}
+                className="text-white text-2xl p-2 bg-black bg-opacity-50 hover:bg-opacity-70"
+              >
                 <FaArrowLeft />
               </button>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center">
-              <button onClick={nextSlide} className="text-white text-2xl p-2 bg-black bg-opacity-50 hover:bg-opacity-70">
+              <button
+                onClick={nextSlide}
+                className="text-white text-2xl p-2 bg-black bg-opacity-50 hover:bg-opacity-70"
+              >
                 <FaArrowRight />
               </button>
             </div>
