@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
 import alkhor from "/assets/villas/Al-Khor.jpg";
-import althakira from "/assets/villas/AlThakira.jpg";
+import althakira from "/assets/villas/AL-THAKIRA/AL-THAKIRA-01.jpg";
 import alrayyan from "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg";
 import raslaffan from "/assets/villas/RasLaffan.jpg";
 import alruwais from "/assets/villas/Al-Ruwais.jpg";
