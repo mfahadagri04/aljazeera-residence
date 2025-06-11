@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { format } from 'date-fns';
 import axios from 'axios';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,7 +18,7 @@ const Testimonial = () => {
     rating: 0,
   });
 
-  // ✅ Fetch testimonials from MongoDB
+  // Fetch testimonials from MongoDB
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
@@ -170,7 +171,9 @@ const Testimonial = () => {
                     <h4 className="text-lg font-semibold text-black mb-1">
                       {testimonial.name}
                     </h4>
-                    <p className="text-xs text-black/50 mb-2">{testimonial.date}</p>
+                    <p className="text-xs text-black/50 mb-2">
+                      {testimonial.date ? format(new Date(testimonial.date), 'MMMM d yyyy') : ''}
+                    </p>
                     <blockquote className="text-black/70 italic text-sm flex-grow">
                       "{testimonial.testimonial}"
                     </blockquote>
