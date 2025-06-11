@@ -47,7 +47,7 @@ const OurVillas = () => {
     },
     {
       name: "Al-Ruwais",
-      img: "/assets/villas/Al-Ruwais.jpg",
+      img: "/assets/villas/AL-RUWAIS/AL-RUWAIS-01.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateGallery("AL-RUWAIS"),
     },
