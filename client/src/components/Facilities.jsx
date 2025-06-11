@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import comingsoon from "/assets/comingsoon.jpg";
 
 const Facilities = () => {
   const [currentImage, setCurrentImage] = useState(null);
@@ -10,42 +9,42 @@ const Facilities = () => {
     { 
       name: 'Prayer Room', 
       description: 'Peaceful space for prayers',
-      image: comingsoon
+      image: "/assets/FACILITY/15. AL JAZERAA-MUSHOLA.jpg"
     },
     { 
       name: 'Ablution Station', 
       description: 'Cleansing facilities for worship',
-      image: comingsoon
+      image: "/assets/FACILITY/10. AL JAZERAA-WUDHU.jpg"
     },
     { 
       name: 'Kids Play Area', 
       description: 'Safe and fun for children',
-      image: comingsoon
+      image: "/assets/FACILITY/22. AL JAZEERA- PLAYGROUND.jpg"
     },
     { 
       name: 'Coffee Corner', 
       description: 'Premium coffee and refreshments',
-      image: comingsoon
+      image: "/assets/FACILITY/06. AL JAZERAA - COFFEE CORNER.jpg"
     },
     { 
       name: 'High Fences', 
       description: 'Privacy and security ensured',
-      image: comingsoon
+      image: "/assets/FACILITY/fence.jpg"
     },
     { 
       name: '24/7 CCTV', 
       description: 'Round-the-clock surveillance',
-      image: comingsoon
+      image: "/assets/FACILITY/03. AL JAZERAA - CCTV.jpg"
     },
     { 
       name: '24/7 Office Hours', 
       description: 'Always available for assistance',
-      image: comingsoon
+      image: "/assets/FACILITY/office.jpg"
     },
     { 
       name: 'Flexiblility', 
       description: 'Tailored stays for your needs',
-      image: comingsoon
+      image: "/assets/FACILITY/01. AL JAZERAA-TATIB.jpg"
     }
   ];
 
