@@ -9,7 +9,7 @@ const Facilities = () => {
     { 
       name: 'Prayer Room', 
       description: 'Peaceful space for prayers',
-      image: "/assets/FACILITY/15. AL JAZERAA-MUSHOLA.jpg"
+      image: "/assets/FACILITY/15. AL JAZERAA-MUSHOLAjpg.jpg"
     },
     { 
       name: 'Ablution Station', 
