@@ -33,7 +33,7 @@ const Home = () => {
                 </p>
                 <p className="text-primary text-sm md:text-base lg:text-lg mb-8 max-w-2xl font-bold"> 
                     The Homey Syariah Homestay <br />
-                    Feel at home with us, where comfort meets tradition.
+                    Feel at home with us
                 </p>
 
                 {/* <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">
