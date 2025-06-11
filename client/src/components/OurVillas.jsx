@@ -6,9 +6,9 @@ const generateGallery = (villaName) => {
     "AL-RAYYAN": 19,
     "AL-THAKIRA": 19,
     "AL-AZIZIYAH": 16,
-    "AL-KHOR": 0,
+    "AL-KHOR": 17,
     "RAS-LAFFAN": 3,
-    "AL-RUWAIS": 0
+    "AL-RUWAIS": 17
   };
   const count = galleryData[villaName] || 0;
   return Array.from({ length: count }, (_, i) =>
@@ -35,7 +35,7 @@ const OurVillas = () => {
   const twoBedroomVillas = [
     {
       name: "Al-Khor",
-      img: "/assets/villas/Al-Khor.jpg",
+      img: "/assets/villas/AL-KHOR/AL-KHOR-01.jpg",
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateGallery("AL-KHOR"),
     },
