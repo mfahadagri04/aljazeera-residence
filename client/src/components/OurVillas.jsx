@@ -7,7 +7,7 @@ const generateGallery = (villaName) => {
     "AL-THAKIRA": 19,
     "AL-AZIZIYAH": 16,
     "AL-KHOR": 17,
-    "RAS-LAFFAN": 3,
+    "RAS-LAFFAN": 7,
     "AL-RUWAIS": 17
   };
   const count = galleryData[villaName] || 0;
@@ -48,7 +48,7 @@ const OurVillas = () => {
     {
       name: "Al-Ruwais",
       img: "/assets/villas/AL-RUWAIS/AL-RUWAIS-01.jpg",
-      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["Coffee Corner", "Meeting Point", "Travel Accomodation", "Abolution Station","Mushola"],
       gallery: generateGallery("AL-RUWAIS"),
     },
     {
