@@ -42,13 +42,13 @@ const OurVillas = () => {
     {
       name: "Ras Laffan",
       img: "/assets/villas/RAS-LAFFAN/RAS-LAFFAN-01.jpg",
-      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["Coffee Corner", "Meeting Point", "Travel Accomodation", "Abolution Station","Mushola"],
       gallery: generateGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
       img: "/assets/villas/AL-RUWAIS/AL-RUWAIS-01.jpg",
-      features: ["Coffee Corner", "Meeting Point", "Travel Accomodation", "Abolution Station","Mushola"],
+      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateGallery("AL-RUWAIS"),
     },
     {
