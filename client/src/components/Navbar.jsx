@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from '/assets/AJZ-logo.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+
+    const logo = "https://res.cloudinary.com/daerjbaol/image/upload/v1750528029/AJZ-logo_qmrqxa.png";
 
     const navList = [
         { link: "Home" },
