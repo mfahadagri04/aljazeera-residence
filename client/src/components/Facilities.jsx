@@ -24,12 +24,12 @@ const Facilities = () => {
     { 
       name: 'Coffee Corner', 
       description: 'Premium coffee and refreshments',
-      image: "/assets/FACILITY/06. AL JAZERAA - COFFEE CORNER.jpg"
+      image: "https://res.cloudinary.com/daerjbaol/image/upload/v1750528031/06._AL_JAZERAA_-_COFFEE_CORNER_byz1y6.jpg"
     },
     { 
       name: 'High Fences', 
       description: 'Privacy and security ensured',
-      image: "/assets/FACILITY/fence.jpg"
+      image: "https://res.cloudinary.com/daerjbaol/image/upload/v1750528048/fence_yoyday.jpg"
     },
     { 
       name: '24/7 CCTV', 

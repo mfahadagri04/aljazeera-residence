@@ -1,61 +1,47 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
-
-const generateGallery = (villaName) => {
-  const galleryData = {
-    "AL-RAYYAN": 19,
-    "AL-THAKIRA": 19,
-    "AL-AZIZIYAH": 16,
-    "AL-KHOR": 17,
-    "RAS-LAFFAN": 7,
-    "AL-RUWAIS": 17
-  };
-  const count = galleryData[villaName] || 0;
-  return Array.from({ length: count }, (_, i) =>
-    `/assets/villas/${villaName}/${villaName}-${String(i + 1).padStart(2, "0")}.jpg`
-  );
-};
+import { getVillaImage, generateVillaGallery } from "../cloudinary";
 
 const OurVillas = () => {
   const threeBedroomVillas = [
     {
       name: "Al-Rayyan",
-      img: "/assets/villas/AL-RAYYAN/AL-RAYYAN-01.jpg",
+      img: getVillaImage("AL-RAYYAN"),
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-RAYYAN"),
+      gallery: generateVillaGallery("AL-RAYYAN"),
     },
     {
       name: "Al-Thakira",
-      img: "/assets/villas/AL-THAKIRA/AL-THAKIRA-01.jpg",
+      img: getVillaImage("AL-THAKIRA"),
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-THAKIRA"),
+      gallery: generateVillaGallery("AL-THAKIRA"),
     },
   ];
 
   const twoBedroomVillas = [
     {
       name: "Al-Khor",
-      img: "/assets/villas/AL-KHOR/AL-KHOR-01.jpg",
+      img: getVillaImage("AL-KHOR"),
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-KHOR"),
+      gallery: generateVillaGallery("AL-KHOR"),
     },
     {
       name: "Ras Laffan",
-      img: "/assets/villas/RAS-LAFFAN/RAS-LAFFAN-01.jpg",
-      features: ["Coffee Corner", "Meeting Point", "Travel Accomodation", "Abolution Station","Mushola"],
-      gallery: generateGallery("RAS-LAFFAN"),
+      img: getVillaImage("RAS-LAFFAN"),
+      features: ["Coffee Corner", "Meeting Point", "Travel Accommodation", "Abolution Station","Mushola"],
+      gallery: generateVillaGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
-      img: "/assets/villas/AL-RUWAIS/AL-RUWAIS-01.jpg",
+      img: getVillaImage("AL-RUWAIS"),
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-RUWAIS"),
+      gallery: generateVillaGallery("AL-RUWAIS"),
     },
     {
       name: "Al-Aziziyah",
-      img: "/assets/villas/AL-AZIZIYAH/AL-AZIZIYAH-01.jpg",
+      img: 'https://res.cloudinary.com/daerjbaol/image/upload/v1750528049/AL-AZIZIYAH-01_bzsz68.jpg',
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
-      gallery: generateGallery("AL-AZIZIYAH"),
+      gallery: generateVillaGallery("AL-AZIZIYAH"),
     },
   ];
 
