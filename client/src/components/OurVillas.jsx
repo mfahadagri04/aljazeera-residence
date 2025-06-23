@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
-import { getVillaImage, generateVillaGallery } from "../cloudinary";
+import { getVillaCoverImage, generateVillaGallery } from '../imgix';
 
 const OurVillas = () => {
   const threeBedroomVillas = [
     {
       name: "Al-Rayyan",
-      img: getVillaImage("AL-RAYYAN"),
+      img: getVillaCoverImage("AL-RAYYAN"),
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateVillaGallery("AL-RAYYAN"),
     },
     {
       name: "Al-Thakira",
-      img: getVillaImage("AL-THAKIRA"),
+      img: getVillaCoverImage("AL-THAKIRA"),
       features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateVillaGallery("AL-THAKIRA"),
     },
@@ -21,25 +21,25 @@ const OurVillas = () => {
   const twoBedroomVillas = [
     {
       name: "Al-Khor",
-      img: getVillaImage("AL-KHOR"),
+      img: getVillaCoverImage("AL-KHOR"),
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateVillaGallery("AL-KHOR"),
     },
     {
       name: "Ras Laffan",
-      img: getVillaImage("RAS-LAFFAN"),
+      img: getVillaCoverImage("RAS-LAFFAN"),
       features: ["Coffee Corner", "Meeting Point", "Travel Accommodation", "Abolution Station","Mushola"],
       gallery: generateVillaGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
-      img: getVillaImage("AL-RUWAIS"),
+      img: getVillaCoverImage("AL-RUWAIS"),
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateVillaGallery("AL-RUWAIS"),
     },
     {
       name: "Al-Aziziyah",
-      img: 'https://res.cloudinary.com/daerjbaol/image/upload/v1750528049/AL-AZIZIYAH-01_bzsz68.jpg',
+      img: getVillaCoverImage("AL-AZIZIYAH"),
       features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
       gallery: generateVillaGallery("AL-AZIZIYAH"),
     },
