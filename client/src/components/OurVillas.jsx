@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { getVillaCoverImage, generateVillaGallery } from '../imgix';
+import { CurrencyContext } from './CurrencyContext';
 
 const OurVillas = () => {
+  const { currency, rates } = useContext(CurrencyContext);
+
   const rasLaffanOffice = {
     name: "Ras Laffan",
     img: getVillaCoverImage("RAS-LAFFAN"),
@@ -53,6 +56,25 @@ const OurVillas = () => {
     },
   ];
 
+  const formatPrice = (idrPrice) => {
+    const convertedPrice = idrPrice * rates[currency];
+    
+    switch(currency) {
+      case 'IDR':
+        return `IDR ${idrPrice.toLocaleString('id-ID')}/night`;
+      case 'USD':
+        return `$${convertedPrice.toFixed(2)}/night`;
+      case 'CAD':
+        return `CA$${convertedPrice.toFixed(2)}/night`;
+      case 'QAR':
+        return `QR ${convertedPrice.toFixed(2)}/night`;
+      case 'MYR':
+        return `RM ${convertedPrice.toFixed(2)}/night`;
+      default:
+        return `IDR ${idrPrice.toLocaleString('id-ID')}/night`;
+    }
+  };
+
   return (
     <section id="Villas" className="py-10 px-4 md:px-16 bg-tertiary">
       <h2 className="text-5xl font-bold text-center text-gray-800 mb-4">Our Villas</h2>
@@ -75,7 +97,9 @@ const OurVillas = () => {
       <div className="mb-16">
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
           3-Bedroom Villas
-          <p className="text-sm font-normal text-gray-600 mt-1">IDR 850.000/night</p>
+          <p className="text-sm font-normal text-gray-600 mt-1">
+            {formatPrice(8500000000)}
+          </p>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {threeBedroomVillas.map((villa) => (
@@ -88,7 +112,9 @@ const OurVillas = () => {
       <div>
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
           2-Bedroom Villas
-          <p className="text-sm font-normal text-gray-600 mt-1">IDR 750.000/night</p>
+          <p className="text-sm font-normal text-gray-600 mt-1">
+            {formatPrice(750000)}
+          </p>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {twoBedroomVillas.map((villa) => (

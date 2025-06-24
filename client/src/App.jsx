@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import LoadingFallback from './components/LoadingFallback';
 import ErrorBoundary from './components/ErrorBoundary';
+import { CurrencyProvider } from './components/CurrencyContext';
 
 // Lazy-loaded components
 const Home = lazy(() => import('./components/Home'));
@@ -13,7 +14,7 @@ const Facilities = lazy(() => import('./components/Facilities'));
 
 function App() {
   return (
-    <>
+    <CurrencyProvider>
       <div className="home_section">
         <Navbar />
         <ErrorBoundary>
@@ -30,7 +31,7 @@ function App() {
           <Contact />
         </Suspense>
       </ErrorBoundary>
-    </>
+    </CurrencyProvider>
   );
 }
 
