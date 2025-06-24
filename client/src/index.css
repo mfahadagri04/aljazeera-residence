@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .home_section {
-  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)), url(https://res.cloudinary.com/daerjbaol/image/upload/v1750528030/AJRHomepage_eoqe6d.jpg);
+  background: linear-gradient(rgba(15,23,43,0.6), rgba(15,23,43,0.6)), url(https://aljazeera-residence-beta.vercel.app/assets/AJRHomepage.jpg);
   min-height: 100vh;
   background-position: center;
   background-size: cover;

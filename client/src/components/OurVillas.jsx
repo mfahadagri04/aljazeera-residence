@@ -3,17 +3,31 @@ import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { getVillaCoverImage, generateVillaGallery } from '../imgix';
 
 const OurVillas = () => {
+  const rasLaffanOffice = {
+    name: "Ras Laffan",
+    img: getVillaCoverImage("RAS-LAFFAN"),
+    features: [
+      "Coffee Corner",
+      "Meeting Point",
+      "Transit Accommodation",
+      "Abolution Station",
+      "Mushola",
+      "24/7 Security & Office Hours"
+    ],
+    gallery: generateVillaGallery("RAS-LAFFAN"),
+  };
+
   const threeBedroomVillas = [
     {
       name: "Al-Rayyan",
       img: getVillaCoverImage("AL-RAYYAN"),
-      features: ["3 Bedrooms", "2 Bathrooms", "front yard", "back yard", "kitchen", "3 Entrances"],
+      features: ["3 Bedrooms", "2 Bathrooms", "Front Yard", "BackYard", "kitchen", "3 Entrances"],
       gallery: generateVillaGallery("AL-RAYYAN"),
     },
     {
       name: "Al-Thakira",
       img: getVillaCoverImage("AL-THAKIRA"),
-      features: ["3 Bedrooms", "2 Bathrooms", "front yard", "back yard", "kitchen", "2 Entrances", "*Bigger Living Room", "Private Room for Maid"],
+      features: ["3 Bedrooms", "2 Bathrooms", "Front Yard", "BackYard", "kitchen", "2 Entrances", "*Bigger Living Room", "Private Room for Maid"],
       gallery: generateVillaGallery("AL-THAKIRA"),
     },
   ];
@@ -22,25 +36,19 @@ const OurVillas = () => {
     {
       name: "Al-Khor",
       img: getVillaCoverImage("AL-KHOR"),
-      features: ["2 Bedrooms", "*1 Big Bathroom", "front yard", "back yard", "kitchen"],
+      features: ["2 Bedrooms", "*1 Big Bathroom", "Front Yard", "BackYard", "kitchen"],
       gallery: generateVillaGallery("AL-KHOR"),
-    },
-    {
-      name: "Ras Laffan (Office)",
-      img: getVillaCoverImage("RAS-LAFFAN"),
-      features: ["Coffee Corner", "Meeting Point", "Transit Accommodation", "Abolution Station","Mushola","24/7 Security & Office Hours"],
-      gallery: generateVillaGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
       img: getVillaCoverImage("AL-RUWAIS"),
-      features: ["2 Bedrooms", "1 Bathroom","*Big Kitchen", "front yard", "back yard"],
+      features: ["2 Bedrooms", "1 Bathroom","*Big Kitchen", "Front Yard", "BackYard"],
       gallery: generateVillaGallery("AL-RUWAIS"),
     },
     {
       name: "Al-Aziziyah",
       img: getVillaCoverImage("AL-AZIZIYAH"),
-      features: ["2 Bedrooms", "1 Bathroom", "front yard", "back yard", "kitchen"],
+      features: ["2 Bedrooms", "1 Bathroom", "Front Yard", "BackYard", "kitchen"],
       gallery: generateVillaGallery("AL-AZIZIYAH"),
     },
   ];
@@ -48,9 +56,20 @@ const OurVillas = () => {
   return (
     <section id="Villas" className="py-10 px-4 md:px-16 bg-tertiary">
       <h2 className="text-5xl font-bold text-center text-gray-800 mb-4">Our Villas</h2>
-      <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+      <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-4">
         *All villas come fully furnished and include 24/7 Wi-Fi and Netflix access. Each unit features a private washing machine and a fully equipped kitchen. An iron and blender are available upon request. Complimentary covered parking is provided for each villa.
       </p>
+
+      {/* Ras Laffan Office Villa */}
+      <div className="mb-16">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
+          Office
+          <p className="text-sm font-normal text-gray-600 mt-1">Special Office Unit</p>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <VillaCard key={rasLaffanOffice.name} {...rasLaffanOffice} />
+        </div>
+      </div>
 
       {/* 3-Bedroom Villas */}
       <div className="mb-16">
