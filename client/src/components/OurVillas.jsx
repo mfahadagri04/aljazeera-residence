@@ -7,13 +7,13 @@ const OurVillas = () => {
     {
       name: "Al-Rayyan",
       img: getVillaCoverImage("AL-RAYYAN"),
-      features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["3 Bedrooms", "2 Bathrooms", "front yard", "back yard", "kitchen", "3 Entrances"],
       gallery: generateVillaGallery("AL-RAYYAN"),
     },
     {
       name: "Al-Thakira",
       img: getVillaCoverImage("AL-THAKIRA"),
-      features: ["3 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["3 Bedrooms", "2 Bathrooms", "front yard", "back yard", "kitchen", "2 Entrances", "*Bigger Living Room", "Private Room for Maid"],
       gallery: generateVillaGallery("AL-THAKIRA"),
     },
   ];
@@ -22,32 +22,35 @@ const OurVillas = () => {
     {
       name: "Al-Khor",
       img: getVillaCoverImage("AL-KHOR"),
-      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["2 Bedrooms", "*1 Big Bathroom", "front yard", "back yard", "kitchen"],
       gallery: generateVillaGallery("AL-KHOR"),
     },
     {
-      name: "Ras Laffan",
+      name: "Ras Laffan (Office)",
       img: getVillaCoverImage("RAS-LAFFAN"),
-      features: ["Coffee Corner", "Meeting Point", "Travel Accommodation", "Abolution Station","Mushola"],
+      features: ["Coffee Corner", "Meeting Point", "Transit Accommodation", "Abolution Station","Mushola","24/7 Security & Office Hours"],
       gallery: generateVillaGallery("RAS-LAFFAN"),
     },
     {
       name: "Al-Ruwais",
       img: getVillaCoverImage("AL-RUWAIS"),
-      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["2 Bedrooms", "1 Bathroom","*Big Kitchen", "front yard", "back yard"],
       gallery: generateVillaGallery("AL-RUWAIS"),
     },
     {
       name: "Al-Aziziyah",
       img: getVillaCoverImage("AL-AZIZIYAH"),
-      features: ["2 Bedrooms", "2 Bathrooms", "Private Pool", "Garden View"],
+      features: ["2 Bedrooms", "1 Bathroom", "front yard", "back yard", "kitchen"],
       gallery: generateVillaGallery("AL-AZIZIYAH"),
     },
   ];
 
   return (
     <section id="Villas" className="py-10 px-4 md:px-16 bg-tertiary">
-      <h2 className="text-5xl font-bold text-center text-gray-800 mb-12">Our Villas</h2>
+      <h2 className="text-5xl font-bold text-center text-gray-800 mb-4">Our Villas</h2>
+      <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+        *All villas come fully furnished and include 24/7 Wi-Fi and Netflix access. Each unit features a private washing machine and a fully equipped kitchen. An iron and blender are available upon request. Complimentary covered parking is provided for each villa.
+      </p>
 
       {/* 3-Bedroom Villas */}
       <div className="mb-16">

@@ -52,7 +52,7 @@ const Facilities = () => {
     },
     { 
       name: 'Coffee Corner', 
-      description: 'Premium coffee and refreshments',
+      description: 'Free Premium coffee and refreshments',
       filename: "06. AL JAZERAA - COFFEE CORNER.jpg",
       thumbWidth: 600,
       thumbHeight: 400
