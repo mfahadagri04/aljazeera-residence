@@ -6,6 +6,8 @@ import { CurrencyContext } from './CurrencyContext';
 const OurVillas = () => {
   const { currency, rates } = useContext(CurrencyContext);
 
+  console.log("Current currency in OurVillas:", currency);
+
   const rasLaffanOffice = {
     name: "Ras Laffan",
     img: getVillaCoverImage("RAS-LAFFAN"),

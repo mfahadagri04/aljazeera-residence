@@ -33,7 +33,7 @@ const Contact = () => {
                 <address className="not-italic leading-tight">
                   <span className="hover:text-secondary transition-colors">
                     Al Jazeera Residence<br />
-                    Lrg. Lam Ara III No.14 A-F, Rukoh<br />
+                    Lrg. Lam Ara II No.14 A-F, Rukoh<br />
                     Darussalam, Banda Aceh
                   </span>
                 </address>
@@ -88,10 +88,10 @@ const Contact = () => {
                 <FaBuilding className="inline-block mr-1 text-xs" />
                 Booking.com
               </a>
-              {/* <a href="#" className="hover:text-[#F78D1D] transition-colors">
+              <a href="https://www.agoda.com/aljazeera-residence/hotel/aceh-id.html?countryId=192&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2025-08-23&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=CAD&isFreeOccSearch=false&los=1&searchrequestid=03af819f-c53d-4218-a545-eedc2d9c1e0f&ds=Wm%2BXpJFAB36YcXEm" className="hover:text-[#F78D1D] transition-colors">
                 <FaBed className="inline-block mr-1 text-xs" />
                 Agoda
-              </a> */}
+              </a>
               <a href="#https://www.skyscanner.ca/hotels/indonesia/banda-aceh-hotels/aljazeera-residence/ht-222376782?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.com" className="hover:text-[#00B2D6] transition-colors">
                 <FaPlane className="inline-block mr-1 text-xs" />
                 Skyscanner

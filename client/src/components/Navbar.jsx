@@ -102,7 +102,7 @@ const Navbar = () => {
           <div
             onMouseEnter={() => setCurrencyOpen(true)}
             onMouseLeave={() => setCurrencyOpen(false)}
-            className="absolute right-0 z-50 w-28 max-w-full"
+            className="flex-1 flex justify-end relative"
           >
             <button
               className="flex items-center gap-2 text-white text-sm px-2 py-1 rounded-md focus:outline-none"
