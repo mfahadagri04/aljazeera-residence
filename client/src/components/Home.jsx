@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
-import { TypeAnimation } from 'react-type-animation';
+import {TypeAnimation} from 'react-type-animation';
 
 const Home = () => {
     return (
@@ -15,7 +14,11 @@ const Home = () => {
                     'Selamat Datang!',
                     1500,
                     '!مرحبا',
-                    1500, 
+                    1500,
+                    'Peu Haba!',
+                    1500,
+                    'Bienvenue!',
+                    1500,
                     ]}
                     wrapper="span"
                     speed={20}
@@ -26,12 +29,16 @@ const Home = () => {
                 />
                 </h2>
                 <p className="text-primary text-sm md:text-base lg:text-lg mb-8 max-w-2xl">
-                    Al Jazeera Homestay in Banda Aceh offers a warm and welcoming atmosphere, combining traditional Acehnese hospitality with comfortable accommodations, making it an ideal stay for travelers seeking a peaceful and authentic local experience.
+                    Al Jazeera Homestay in Banda Aceh offers a warm and welcoming atmosphere, blending traditional Acehnese hospitality with modern comfort. With its cozy accommodations, it’s the perfect choice for travelers seeking a peaceful and authentic local experience.
+                </p>
+                <p className="text-primary text-sm md:text-base lg:text-lg mb-8 max-w-2xl font-bold"> 
+                    The Homey Syariah Homestay <br />
+                    Feel at home with us
                 </p>
 
-                <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">
+                {/* <a href="#" className="btn w-48 md:w-56 text-sm md:text-base">
                     Reservation
-                </a>
+                </a> */}
             </div>
         </section>
     );

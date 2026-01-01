@@ -1,17 +1,37 @@
+import { lazy, Suspense } from 'react';
 import './App.css';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
-import OurVillas from './components/OurVillas';
-import Testimonial from './components/Testimonial';
+import LoadingFallback from './components/LoadingFallback';
+import ErrorBoundary from './components/ErrorBoundary';
+import { CurrencyProvider } from './components/CurrencyContext';
+
+// Lazy-loaded components
+const Home = lazy(() => import('./components/Home'));
+const OurVillas = lazy(() => import('./components/OurVillas'));
+const Testimonial = lazy(() => import('./components/Testimonial'));
+const Contact = lazy(() => import('./components/Contact'));
+const Facilities = lazy(() => import('./components/Facilities'));
 
 function App() {
   return (
-    <div className="home_section">
-      <Navbar />
-      <Home />
-      <OurVillas />
-      <Testimonial />
-    </div>
+    <CurrencyProvider>
+      <div className="home_section">
+        <Navbar />
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingFallback />}>
+            <Home />
+            <OurVillas />
+            <Facilities />
+            <Testimonial />
+          </Suspense>
+        </ErrorBoundary>
+      </div>
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <Contact />
+        </Suspense>
+      </ErrorBoundary>
+    </CurrencyProvider>
   );
 }
 
