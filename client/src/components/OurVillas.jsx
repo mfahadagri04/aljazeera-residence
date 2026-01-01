@@ -99,13 +99,10 @@ const OurVillas = () => {
       <div className="mb-16">
         <h3 className="text-2xl font-semibold text-gray-800 mb-8 pb-2 border-b-2 border-gray-300">
           3-Bedroom Villas
-<<<<<<< HEAD
           <p className="text-sm font-normal text-gray-600 mt-1">Rp 1.000.000/night</p>
-=======
           <p className="text-sm font-normal text-gray-600 mt-1">
-            {formatPrice(850000)}
+            {formatPrice(1000000)}
           </p>
->>>>>>> fb161e0f04531ea4504dd0ee93188405841815e0
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {threeBedroomVillas.map((villa) => (
